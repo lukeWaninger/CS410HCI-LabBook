@@ -13,16 +13,28 @@ namespace CS410HCI_LabBook.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Project1()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "The page for project 1";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Project2()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "The page for project 2";
+
+            return View();
+        }
+        public ActionResult Project3()
+        {
+            ViewBag.Message = "The page for project 3";
+
+            return View();
+        }
+        public ActionResult Project4()
+        {
+            ViewBag.Message = "The page for project 4";
 
             return View();
         }

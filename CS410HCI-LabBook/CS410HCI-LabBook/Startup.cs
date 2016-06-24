@@ -8,7 +8,6 @@ namespace CS410HCI_LabBook
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
         }
     }
 }
