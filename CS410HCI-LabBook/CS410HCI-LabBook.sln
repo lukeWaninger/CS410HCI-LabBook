@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS410HCI-LabBook", "CS410HCI-LabBook\CS410HCI-LabBook.csproj", "{FD7EECD1-3C96-41AE-A97B-6092F5048D51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS410HCI-LabBook.Tests", "CS410HCI-LabBook.Tests\CS410HCI-LabBook.Tests.csproj", "{782C8133-3E8D-47C8-BC28-600BD17338A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{54BC5C25-B7B6-4CF2-87F7-0D9B8B9A1A0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4B3DD57C-94B2-42D1-AD8E-4A2A7B7B92AC}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{01D944E7-6B3B-4C20-872A-B69EC3CB8D10}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\CS410HCI-LabBook.json = PublishScripts\Templates\CS410HCI-LabBook.json
+		PublishScripts\Templates\CS410HCI-LabBook.param.dev.json = PublishScripts\Templates\CS410HCI-LabBook.param.dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD7EECD1-3C96-41AE-A97B-6092F5048D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD7EECD1-3C96-41AE-A97B-6092F5048D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD7EECD1-3C96-41AE-A97B-6092F5048D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD7EECD1-3C96-41AE-A97B-6092F5048D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{782C8133-3E8D-47C8-BC28-600BD17338A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{782C8133-3E8D-47C8-BC28-600BD17338A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{782C8133-3E8D-47C8-BC28-600BD17338A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{782C8133-3E8D-47C8-BC28-600BD17338A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4B3DD57C-94B2-42D1-AD8E-4A2A7B7B92AC} = {54BC5C25-B7B6-4CF2-87F7-0D9B8B9A1A0D}
+		{01D944E7-6B3B-4C20-872A-B69EC3CB8D10} = {54BC5C25-B7B6-4CF2-87F7-0D9B8B9A1A0D}
+	EndGlobalSection
+EndGlobal
