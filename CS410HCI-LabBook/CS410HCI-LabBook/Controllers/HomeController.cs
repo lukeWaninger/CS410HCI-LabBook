@@ -38,5 +38,12 @@ namespace CS410HCI_LabBook.Controllers
 
             return View();
         }
+
+        public ActionResult CourseProject()
+        {
+            ViewBag.Message = "The page for the course project";
+
+            return View();
+        }
     }
 }

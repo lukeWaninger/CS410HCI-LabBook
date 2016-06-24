@@ -193,6 +193,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CourseProjectController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -242,6 +243,13 @@
     <Content Include="Views\Home\Project2.cshtml" />
     <Content Include="Views\Home\Project3.cshtml" />
     <Content Include="Views\Home\Project4.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\CourseProject\CourseProjectMain.cshtml" />
+    <Content Include="Views\CourseProject\TwoOne.cshtml" />
+    <Content Include="Views\CourseProject\TwoTwo.cshtml" />
+    <Content Include="Views\CourseProject\TwoThree.cshtml" />
+    <Content Include="Views\CourseProject\TwoFour.cshtml" />
+    <Content Include="Views\CourseProject\TwoFive.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
