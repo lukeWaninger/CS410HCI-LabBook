@@ -195,6 +195,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CourseProjectController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LabProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -236,16 +237,16 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Project1.cshtml" />
-    <Content Include="Views\Home\Project2.cshtml" />
-    <Content Include="Views\Home\Project3.cshtml" />
-    <Content Include="Views\Home\Project4.cshtml" />
+    <Content Include="Views\LabProject\Two.cshtml" />
+    <Content Include="Views\LabProject\Three.cshtml" />
+    <Content Include="Views\LabProject\Four.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CourseProject\CourseProjectMain.cshtml" />
-    <Content Include="Views\CourseProject\TwoOne.cshtml" />
-    <Content Include="Views\CourseProject\TwoTwo.cshtml" />
-    <Content Include="Views\CourseProject\TwoThree.cshtml" />
-    <Content Include="Views\CourseProject\TwoFour.cshtml" />
+    <Content Include="Views\CourseProject\Ethnography.cshtml" />
+    <Content Include="Views\CourseProject\Scenarios.cshtml" />
+    <Content Include="Views\CourseProject\DraftLayout.cshtml" />
+    <Content Include="Views\CourseProject\FocusGroup.cshtml" />
+    <Content Include="Views\CourseProject\UI.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

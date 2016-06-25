@@ -19,17 +19,28 @@
                 </button>
                 @Html.ActionLink("CS410 HCI", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Project 1", "Project1", "Home")</li>
-                    <li>@Html.ActionLink("Project 2", "Project2", "Home")</li>
-                    <li>@Html.ActionLink("Project 3", "Project3", "Home")</li>
-                    <li>@Html.ActionLink("Project 4", "Project4", "Home")</li>
-                    <li>@Html.ActionLink("Course Project", "CourseProjectMain", "CourseProject")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course Project<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Ethnography", "Ethnography", "CourseProject")</li>
+                            <li>@Html.ActionLink("Scenarios", "Scenarios", "CourseProject")</li>
+                            <li>@Html.ActionLink("Draft Layout", "DraftLayout", "CourseProject")</li>
+                            <li>@Html.ActionLink("Focus Group", "FocusGroup", "CourseProject")</li>
+                            <li>@Html.ActionLink("User Interface", "UI", "CourseProject")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Project 2", "Two", "LabProject")</li>
+                    <li>@Html.ActionLink("Project 3", "Three", "LabProject")</li>
+                    <li>@Html.ActionLink("Project 4", "Four", "LabProject")</li>
                 </ul>
-            </div>
-        </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />

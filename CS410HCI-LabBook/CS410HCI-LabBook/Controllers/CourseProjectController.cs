@@ -15,29 +15,29 @@ namespace CS410HCI_LabBook.Controllers
         }
 
         // GET: CourseProject
-        public ActionResult TwoOne()
+        public ActionResult Ethnography()
         {
             return View();
         }
 
         // GET: CourseProject
-        public ActionResult TwoTwo()
+        public ActionResult Scenarios()
         {
             return View();
         }
 
         // GET: CourseProject
-        public ActionResult TwoThree()
+        public ActionResult DraftLayout()
         {
             return View();
         }
 
         // GET: CourseProject
-        public ActionResult TwoFour()
+        public ActionResult FocusGroup()
         {
             return View();
         }
-        public ActionResult TwoFive()
+        public ActionResult UI()
         {
             return View();
         }
