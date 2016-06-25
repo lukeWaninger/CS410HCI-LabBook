@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/CS410HCI-LabBook/CS410HCI-LabBook/Properties/PublishProfiles

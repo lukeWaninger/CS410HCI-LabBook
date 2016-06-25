@@ -1,6 +1,13 @@
-﻿@{
+﻿@model CS410HCI_LabBook.ViewModels.LabProject2ViewModel
+@{
     ViewBag.Title = "Project 2";
 }
 <div class="jumbotron">
     <h3>Lab Project 2 - Develop a user interface for a data collection web site.</h3>
 </div>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <br/>
+
+}
