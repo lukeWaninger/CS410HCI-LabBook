@@ -17,7 +17,7 @@ namespace CS410HCI_LabBook.Controllers
         // GET: CourseProject
         public ActionResult Ethnography()
         {
-            return View(new CS410HCI_LabBook.ViewModels.EthnographyViewModel());
+            return View();
         }
 
         // GET: CourseProject
