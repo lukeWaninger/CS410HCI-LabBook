@@ -22,3 +22,56 @@ select,
 textarea {
     max-width: 280px;
 }
+.collapse-open {
+
+}
+.collapse-open span {
+    margin-left: 100px;
+    float: right;
+    width: 20px;
+    height: 20px;
+    background:url(Images/minus-sign.png) center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 7px;
+}
+.collapse-close span {
+    margin-left: 100px;
+    float: right;
+    width: 20px;
+    height: 20px;
+    background: url(Images/plus-sign.png) center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 7px;
+}
+.col-md-2 {
+    min-width: 150px
+}
+legend.collapsible:hover {
+    cursor: pointer;
+}
+.organizer {
+    display: inline;
+    text-align: left;
+    margin-left: 10px;
+    margin: 0 auto;
+    padding: 5px 0 0 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.organizer div.tableRow {
+    display: table-row;
+    margin: auto;
+    width: auto;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    vertical-align: central;
+}
+.organizer div.tableRow div.col1 {
+    display: table-cell;
+    text-align: left;
+    width: auto;
+    margin: auto;
+    vertical-align: text-top;
+}
