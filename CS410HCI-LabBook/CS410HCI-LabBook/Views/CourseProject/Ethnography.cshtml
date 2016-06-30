@@ -1,5 +1,4 @@
-﻿@model CS410HCI_LabBook.ViewModels.EthnographyViewModel
-@{
+﻿@{
     ViewBag.Title = "2.1 Ethnography";
 }
 
@@ -11,5 +10,100 @@
     </p>
 </div>
 
-<iframe src="https://drive.google.com/file/d/0BwLS0q_z3G1SdDNMVEpQUl93ME0/preview" style="width:100%;height:800px"></iframe>
-<img src="~/Content/Recourse Documents/ToolShed Layout.jpg" style="width:100%" />
+<h4>Application: Volunteer Scheduling</h4>
+<p>
+    The developed application would provide scheduling features for Tool Shed volunteers. Currently, the organization is using XXX
+    for scheduling volunteer workers. Deficiencies with this procedure. How ours would fix those deficiencies.
+</p>
+
+<button id="notesButton" type="button" class="btn btn-default" aria-label="..." onclick="openNotes()">Notes</button>
+<button id="floorPlanButton" type="button" class="btn btn-default" aria-label="..." onclick="openFloorPlan()">Floor Plan</button>
+
+@(Html.Kendo().Window()        
+        .Title("Notes")
+        .Name("notesWindow")
+        .Content(
+            @<text>
+                <iframe src="https://drive.google.com/file/d/0BwLS0q_z3G1SdDNMVEpQUl93ME0/preview" style="position:center;width:99%;height:99%"></iframe>
+            </text>)
+         .Iframe(true)
+         .Resizable()
+         .Draggable()
+         .Visible(false)
+         .Animation(animation => {
+             animation.Open(open => {
+                 open.Zoom(ZoomDirection.In);
+                 open.Fade(FadeDirection.In);
+             });
+             animation.Close(close => {
+                 close.Zoom(ZoomDirection.Out);
+                 close.Fade(FadeDirection.Out);
+             });
+         })
+         .Events(events => events.Close("closeNotes"))
+)
+
+@(Html.Kendo().Window()
+        .Title("Floor Plan")
+        .Name("floorPlanWindow")
+        .Content(
+    @<text>        
+        <img id="floorPlanImg" src="~/Content/Recourse Documents/ToolShed Layout.jpg" style="height:100%;width:100%;max-width:700px" />
+    </text>)
+         .Iframe(false)
+         .Resizable()
+         .Draggable()
+         .Visible(false)
+         .Animation(animation => {
+             animation.Open(open => {
+                 open.Zoom(ZoomDirection.In);
+                 open.Fade(FadeDirection.In);
+             });
+             animation.Close(close => {
+                 close.Zoom(ZoomDirection.Out);
+                 close.Fade(FadeDirection.Out);
+             });
+         })
+         .Events(events => events.Close("closeFloorPlan"))
+)
+
+@section Scripts{
+    <script type="text/javascript">
+        function closeNotes() {
+            $("#notesButton").show();
+        }
+
+        function openNotes() {
+            $("#notesButton").hide();
+
+            var window = $("#notesWindow").data("kendoWindow");
+            var height = screen.height / 2;
+            window.wrapper.css({
+                width: "85%",
+                maxWidth: "900px",
+                height: height,
+            });
+
+            window.open();
+            window.center();
+        }
+
+        function closeFloorPlan() {
+            $("#floorPlanButton").show();
+        }
+
+        function openFloorPlan() {
+            $("#floorPlanButton").hide();
+
+            var window = $("#floorPlanWindow").data("kendoWindow");
+            var height = screen.height / 2;
+            window.wrapper.css({
+                width: "85%",
+                maxWidth: "700px",
+                height: height,
+            })
+            window.open();
+            window.center();
+        }
+    </script>    
+}
