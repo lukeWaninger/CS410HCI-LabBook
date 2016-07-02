@@ -10,6 +10,19 @@
     </p>
 </div>
 
+<h4>Southeast Portland Tool Library (SEPTL)</h4>
+<p>
+    The tool library is a resource for residents of SE Portland to check out tools for free for home projects, etc. Tools are due after
+    1 week, after which a $1 late fee is charged for non-electric tools and a $2 late fee is charged for electric tools. The fees accumulate
+    per week (example: an electric drill that is 3 weeks late would have a $6 late fee). Membership is free with a suggested donation of any
+    amount. Most people donate $20. Membership is for a person's entire lifetime. Users (members) were observed entering the tool library,
+    checking tools out, returning tools, paying late fees, and perusing the tool shelves. Volunteers were also observed helping users with
+    tools, processing late fees, processing new members, and checking tools in and out. Lead volunteer mentioned that they would love for us
+    to design and implement a new volunteer scheduling application for them.
+</p>
+
+<br />
+
 <h4>Volunteer Scheduling</h4>
 <p>
     Currently the Tool Shed uses a scheduling system that needs to be improved. Both the manager and a handful of employees
@@ -34,11 +47,11 @@
 <br />
 
 <h4>Raw Data</h4>
-<button id="notesButton" type="button" class="btn btn-default" aria-label="..." onclick="openNotes()">Notes</button>
+<button id="notesButton" type="button" class="btn btn-default" aria-label="..." onclick="openNotes()">Activity Log</button>
 <button id="floorPlanButton" type="button" class="btn btn-default" aria-label="..." onclick="openFloorPlan()">Floor Plan</button>
 
 @(Html.Kendo().Window()        
-        .Title("Notes")
+        .Title("Activity Log")
         .Name("notesWindow")
         .Content(
             @<text>

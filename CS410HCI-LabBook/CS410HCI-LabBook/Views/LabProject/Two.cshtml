@@ -1,13 +1,18 @@
-﻿@model CS410HCI_LabBook.ViewModels.LabProject2ViewModel
-@{
+﻿@{
     ViewBag.Title = "Project 2";
 }
 <div class="jumbotron">
     <h3>Lab Project 2 - Develop a user interface for a data collection web site.</h3>
 </div>
 
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
-    <br/>
+<button onclick="OpenCreateWindow()" class="btn btn-default">New Patient</button>
 
-}
+@(Html.Kendo().Window()
+    .Name("CreateWindow")
+    .Title("New Patient")
+    .Content(Html.Partial("_addPatientPartialView").ToHtmlString())
+    .Draggable()
+    .Visible(false)
+    .Actions(actions => actions.Close())
+    .AutoFocus(true)    
+)

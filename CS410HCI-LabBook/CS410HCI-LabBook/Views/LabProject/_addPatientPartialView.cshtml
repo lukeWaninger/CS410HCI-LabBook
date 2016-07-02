@@ -1,0 +1,308 @@
+﻿@model CS410HCI_LabBook.ViewModels.LabProject2ViewModel
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <fieldset class="organizer">
+            <div id="validationMessages" style="margin-bottom:10px">
+                <span id="validationAlert"></span>
+            </div>
+            <legend style="text-align:center;color:ghostwhite">@DateTime.Now.ToLocalTime()</legend>
+            <div class="tableRow">
+                <div class="col1">@Html.LabelFor(model => model.PatientId, new { @class = "control-label col-md-2 required" })</div>
+                <div class="col2">@Html.TextBoxFor(model => model.PatientId, new { @class = "form-control makeitshort" })</div>
+                @Html.ValidationMessageFor(model => model.PatientId)
+            </div>
+            <div class="tableRow">
+                <div class="col1">@Html.LabelFor(model => model.Temperature, new { @class = "control-label col-md-2" })</div>
+                <div class="col2">@(Html.Kendo().NumericTextBoxFor(model => model.Temperature)
+                                     .Step(.1)
+                                     .Min(0)
+                                     .Max(130)
+                                     .Format("00.0")
+                                     .Decimals(2)
+                                     .Placeholder("36.8"))
+                </div>
+                <div class="col3">Celsius</div>
+                @Html.ValidationMessageFor(model => model.Temperature)
+            </div>
+            <div class="tableRow">
+                <div class="col1">@Html.LabelFor(model => model.Systolic, new { @class = "control-label col-md-2" })</div>
+                <div class="col2">
+                    @(Html.Kendo().NumericTextBoxFor(model => model.Systolic)
+                                    .Step(1)
+                                    .Min(0)
+                                    .Max(300)
+                                    .Format("0")
+                                    .Decimals(1)
+                                    .Placeholder("110"))
+            </div>
+            <div class="col3">mmHG</div>
+            @Html.ValidationMessageFor(model => model.Systolic)
+            </div>
+            <div class="tableRow">
+                <div class="col1">@Html.LabelFor(model => model.Diastolic, new { @class = "control-label col-md-2" })</div>
+                <div class="col2">@(Html.Kendo().NumericTextBoxFor(model => model.Diastolic)
+                                    .Step(1)
+                                    .Min(0)
+                                    .Max(300)
+                                    .Format("0")
+                                    .Decimals(1)
+                                    .Placeholder("70"))
+                </div>
+                <div class="col3">mmHG</div>
+                @Html.ValidationMessageFor(model => model.Diastolic)
+            </div>            
+            <div class="tableRow">
+                <div class="col1">@Html.LabelFor(model => model.RespiratoryRate, new { @class = "control-label col-md-2" })</div>
+                <div class="col2">@(Html.Kendo().NumericTextBoxFor(model => model.RespiratoryRate)
+                                    .Step(1)
+                                    .Min(0)
+                                    .Max(50)
+                                    .Format("0")
+                                    .Decimals(1)
+                                    .Placeholder("15"))
+                </div>
+                <div class="col3">Breaths/Min</div>
+                @Html.ValidationMessageFor(model => model.RespiratoryRate)
+            </div>
+            <div class="tableRow">
+                <div class="col1">@Html.LabelFor(model => model.OxygenSaturation, new { @class = "control-label col-md-2" })</div>
+                <div class="col2">@(Html.Kendo().NumericTextBoxFor(model => model.OxygenSaturation)
+                                     .Format("p0")
+                                     .Min(0)
+                                     .Max(1)
+                                     .Placeholder(".73")
+                                     .Step(.01))                                    
+                </div>
+                <div class="col3">O2 sat (%)</div>
+                @Html.ValidationMessageFor(model => model.OxygenSaturation)
+            </div>
+            <div class="tableRow">
+                <div class="col1">@Html.LabelFor(model => model.BloodGlucoseLevel, new { @class = "control-label col-md-2" })</div>
+                <div class="col2">
+                    @(Html.Kendo().NumericTextBoxFor(model => model.BloodGlucoseLevel)
+                                    .Step(1)
+                                    .Min(0)
+                                    .Max(300)
+                                    .Format("0")
+                                    .Decimals(1)
+                                    .Placeholder("100"))
+            </div>
+            <div class="col3">g/dL</div>
+            @Html.ValidationMessageFor(model => model.BloodGlucoseLevel)
+        </div>
+            <div class="tableRow">
+                <div class="col1">@Html.LabelFor(model => model.Pulse, new { @class = "control-label col-md-2" })</div>
+                <div class="col2">@(Html.Kendo().NumericTextBoxFor(model => model.Pulse)
+                                    .Min(0)
+                                    .Decimals(1)
+                                    .Step(1)
+                                    .Format("0")
+                                    .Placeholder("60"))
+                </div>
+                <div class="col3">bpm</div>
+                @Html.ValidationMessageFor(model => model.Pulse)
+            </div>
+            <div class="tableRow">
+                <div class="col1">
+                    @Html.LabelFor(model => model.PainLevel, new { @class = "control-label col-md-2" })
+                </div>
+                <div class="col2">
+                    @(Html.Kendo().SliderFor(model => model.PainLevel)
+                    .Min(0)
+                    .Max(10)
+                    .SmallStep(1)
+                    .LargeStep(1)
+                    .Value(5)
+                    )
+                    @Html.ValidationMessageFor(model => model.Pulse)
+                </div>
+            </div>
+        </fieldset>
+        <br />
+        <div style="text-align:center">
+            <button id="submitButton" onclick="validate()" class="btn btn-success">SUBMIT</button>
+        </div>
+    </div>
+}
+
+<style>
+    #PatientId {
+        padding-left: 5px;
+        height: 15px;
+        width: 153px;
+    }
+    .required:after {
+        content: "*";
+        font-weight: bold;
+        color: red;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {       
+        $("#submitButton").hide();
+
+        // focus out function for patient id
+        $("#PatientId").focusout(function () {
+            var id = $("#PatientId").val();
+            if (id) {
+                $("#submitButton").show();
+            }
+            else {
+                $("#submitButton").hide();
+                validate();
+            }
+        })
+
+        // lose focus action for temp
+        $("#Temperature").focusout(function () {
+            var val = $("#Temperature").val();
+            var popup = $("#validationAlert").kendoNotification({
+                appendTo: "#validationMessages",
+                allowHideAfter: 1000,
+                autoHideAfter: 7500,
+            }).data("kendoNotification");
+
+            if (val && val > 36 && val < 36.4 || val > 37.6 && val < 38.4) {                
+                popup.show("Patient temperature is abnormal", "alert");
+            }
+            else if (val && val <= 36 || val >= 38.4) {
+                popup.show("Patient temperature is dangerous", "warning");
+            }
+        })
+
+        // lose focus action for systolic blood pressure
+        $("#Systolic").focusout(function () {
+            var val = $("#Systolic").val();
+            var popup = $("#validationAlert").kendoNotification({
+                appendTo: "#validationMessages",
+                allowHideAfter: 1000,
+                autoHideAfter: 7500,
+            }).data("kendoNotification");
+
+            if (val && val > 90 && val < 100 || val > 120 && val < 140) {
+                popup.show("Patient systolic blood pressure (SBP) is abnormal", "alert");
+            }
+            else if (val && val <= 90 || val >= 140) {
+                popup.show("Patient systolic blood pressure (SBP) is dangerous", "warning");
+            }
+        })
+
+        // lose focus for diastolic blood pressure
+        $("#Diastolic").focusout(function () {
+            var val = $("#Diastolic").val();
+            var popup = $("#validationAlert").kendoNotification({
+                appendTo: "#validationMessages",
+                allowHideAfter: 1000,
+                autoHideAfter: 7500,
+            }).data("kendoNotification");
+
+            if (val && val > 50 && val < 60 || val > 80 && val < 90) {
+                popup.show("Patient diastolic blood pressure (DBP) is abnormal", "alert");
+            }
+            else if (val && val <= 50 || val >= 90) {
+                popup.show("Patient diastolic blood pressure (DBP) is dangerous", "warning");
+            }
+        })
+
+        // lose focus for respiratory rate
+        $("#RespiratoryRate").focusout(function () {
+            var val = $("#RespiratoryRate").val();
+            var popup = $("#validationAlert").kendoNotification({
+                appendTo: "#validationMessages",
+                allowHideAfter: 1000,
+                autoHideAfter: 7500,
+            }).data("kendoNotification");
+
+            if (val && val >= 10 && val <= 11 || val >= 20 && val <= 24) {
+                popup.show("Patient respiratory rate is abnormal", "alert");
+            }
+            else if (val && val < 10 || val > 24) {
+                popup.show("Patient respiratory rate is dangerous", "warning");
+            }
+        })
+
+        // lose focus for oxygen saturation
+        $("#OxygenSaturation").focusout(function () {
+            var val = $("#OxygenSaturation").val();
+            var popup = $("#validationAlert").kendoNotification({
+                appendTo: "#validationMessages",
+                allowHideAfter: 1000,
+                autoHideAfter: 7500,
+            }).data("kendoNotification");
+
+            if (val && val >= .90 && val <= .92) {
+                popup.show("Patient oxygen saturation is abnormal", "alert");
+            }
+            else if (val && val < .90) {
+                popup.show("Patient oxygen saturation is abnormal", "warning");
+            }
+        })
+
+        // lose focus for pulse
+        $("#Pulse").focusout(function () {
+            var val = $("#Pulse").val();
+            var popup = $("#validationAlert").kendoNotification({
+                appendTo: "#validationMessages",
+                allowHideAfter: 1000,
+                autoHideAfter: 7500,
+            }).data("kendoNotification");
+
+            if (val && val >= 50 && val <= 59 || val >= 100 && val <= 110) {
+                popup.show("Patient pulse is abnormal", "alert");
+            }
+            else if (val && val < 50 || val > 110) {
+                popup.show("Patient pulse is dangerous", "warning");
+            }
+        })
+
+        // lose focus for blood glucose
+        $("#BloodGlucoseLevel").focusout(function () {
+            var val = $("#BloodGlucoseLevel").val();
+            var popup = $("#validationAlert").kendoNotification({
+                appendTo: "#validationMessages",
+                allowHideAfter: 1000,
+                autoHideAfter: 7500,
+            }).data("kendoNotification");
+
+            if (val && val >= 60 && val <= 69 || val >= 120 && val <= 200) {
+                popup.show("Patient blood glucose level is abnormal", "alert");
+            }
+            else if (val && val < 50 || val > 110) {
+                popup.show("Patient blood glucose level is dangerous", "warning");
+            }
+        })
+    })
+
+    function OpenCreateWindow() {
+        var wnd = $("#CreateWindow").data("kendoWindow");
+
+        wnd.bind('activate', function () {
+            $("#PatientId").focus();
+        })
+
+        wnd.center().open();
+    }
+
+    function validate() {
+        var patientId = $("#PatientId").val();
+        
+        if (!patientId) {
+            var patientIdNotification = $("#validationAlert").kendoNotification({
+                appendTo: "#validationMessages",
+                allowHideAfter: 1000,
+                autoHideAfter: 0,
+            }).data("kendoNotification");
+            patientIdNotification.show("Patient Id is required", "error");
+        }
+        else {
+            $("#submitButton").click();
+            var wnd = $("#CreateWindow").data("kendoWindow");
+            wnd.close();
+        }
+    }
+</script>
+

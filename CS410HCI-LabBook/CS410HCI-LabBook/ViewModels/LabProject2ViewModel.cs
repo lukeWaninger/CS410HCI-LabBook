@@ -13,17 +13,18 @@ namespace CS410HCI_LabBook.ViewModels {
 
         [Display(Name = "Current Date/Time")]
         public DateTime CurrentDateTime { get; set; }
-
+        
+        [Display(Name = "Temperature")]
         public double Temperature { get; set; }
-        public bool Celcius { get; set; }
-        public bool Farenheit { get; set; }
 
         [Range(0, int.MaxValue, ErrorMessage = "Pulse rate must be a positive number.")]
         public int Pulse { get; set; }
 
         [Range(0, int.MaxValue, ErrorMessage = "Systolic rate must be a positive number.")]
+        [Display(Name = "Systolic BP")]
         public int Systolic { get; set; }
 
+        [Display(Name = "Diastolic BP")]
         [Range(0, int.MaxValue, ErrorMessage = "Diastolic rate must be a positive number.")]
         public int Diastolic { get; set; }
 

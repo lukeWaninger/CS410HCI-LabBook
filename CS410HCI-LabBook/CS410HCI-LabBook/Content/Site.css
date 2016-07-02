@@ -53,25 +53,26 @@ legend.collapsible:hover {
 }
 .organizer {
     display: inline;
-    text-align: left;
-    margin-left: 10px;
-    margin: 0 auto;
-    padding: 5px 0 0 0;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin: 0px 20px 20px 0px;
 }
 .organizer div.tableRow {
-    display: table-row;
-    margin: auto;
-    width: auto;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    vertical-align: central;
+    vertical-align: middle;
+    margin-bottom: 12px;
 }
+
 .organizer div.tableRow div.col1 {
     display: table-cell;
-    text-align: left;
-    width: auto;
-    margin: auto;
-    vertical-align: text-top;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.organizer div.tableRow div.col2 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.organizer div.tableRow div.col3 {
+    padding-left: 10px;
+    display: table-cell;
+    vertical-align: middle;
 }
