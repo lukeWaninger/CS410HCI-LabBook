@@ -5,6 +5,96 @@
     <h3>Lab Project 2 - Develop a user interface for a data collection web site.</h3>
 </div>
 
+<h4>Interface description</h4>
+<p>
+    Web site description:  Users: Emergency medical team members who initially examine individuals
+    who call 991 for emergency medical help; Hospital triage nurse who initially examine patients
+    arriving at a hospital emergency room.  Standard medical information for patients includes the following:
+    <ul>
+        <li>Patient ID (Or patient’s name if patient ID is not available)</li>
+        <li>Current date and time <em>To be supplied by interface.</em></li>
+        <li>Patent temperature, using a thermometer</li>
+        <li>Patent pulse rate, using hand on patent’s wrist and a watch with a second hand</li>
+        <li>Patent blood pressure (both systolic and diastolic), using a blood pressure monitor</li>
+        <li>Respiratory rate, using a watch or pulse oximiter</li>
+        <li>Pain, as perceived by the patient on a pain scale of 0-10</li>
+        <li>Oxygen saturation, using a pulse oximiter</li>
+        <li>Blood Glucose Level, using a blood glucose testing strip and monitor</li>
+    </ul>
+</p>
+
+<br />
+<h4>Timing and Widget Order</h4>
+<p>
+    We were quite lucky with this project having direct access to nursing personal from the beginning.
+    We discussed each device and the length of time it takes to for the device to report information.
+    Together we defined how to optimize time and minimize movements to and from the input device 
+    by properly ordering each control widget on the interface. Furthermore, we were able to discuss 
+    UI/UX layout ideas and had the privilege of viewing the software currently in use (although not
+    with any real data). 
+</p>
+
+<p>
+    Temperature is the easiest and quickest measurement to gather taking roughly 5 seconds for a
+    trained nurse (the intended user base) to complete. It was elected as the first input control 
+    as it is most commonly the first measurement to gather. An interesting point was made from the
+    user when talking about how to best switch between Fahrenheit and Celsius. She had difficulty
+    relating to Fahrenheit! As a travel nurse, this specific user worked in many different hospitals
+    across the country and all of them only used Celsius. Because of this, we decided to scratch the
+    unit switching feature all together. From a data perspective, this eliminates erroneous data 
+    from getting into the system. For example, doing this precludes a user from accidentally 
+    entering a Celsius measurement with a Fahrenheit unit. 
+</p>
+
+<p>
+    The blood oximiter takes roughly 120 seconds to report oxygen and pulse rates. At this point, the 
+    user would place the oximiter on the patient and while letting it collect data, get the patients
+    systolic and diastolic blood pressure. 
+</p>
+
+<p>
+    The blood glucose device also took approximately 120 seconds to report and so was elected as 
+    the next device to use. While that device collected, respiratory rate was to be counted and 
+    entered into the interface. Once glucose level was reported the user would ask pain level and
+    input appropriately.
+</p>
+<p>
+    From start to finish the process takes on average 10 ~ 11 minutes to complete.
+</p>
+
+<br />
+<h4>Other Considerations</h4>
+<p>
+    Required fields. The only required field for form submission was set to be the patient id. It is important for the
+    users to get the patient processing and into the hospital. We chose this as our only required field
+    in the case that a single device would be malfunctioning or unavailable. This is an outliers case
+    but was deemed an important case to consider when implementing the design.
+</p>
+
+<p>
+    Alerts. A feature was requested to alert the user if any measurement gathered was in an abnormal or 
+    dangerous range. The ranges are domain specific and have been supplied by the users. They
+    are shown in the document below. If a measurement entered falls into a specific range, the user
+    is alerted via a color change of the table row in which it resides.
+    from the interface by clicking it.
+</p>
+
+<p>
+    Input bounds. Each input widget is bound to with its respective minimum and/or maximum values. For example,
+    an input for a percentage cannot exceed 1. No input can be below.
+</p>
+
+<p>
+    Placeholders. These are given for each field (minus the patient id) to represent the format of input required.
+    Each placeholder is a value in the 'normal' range as supplied by the domain expert.
+</p>
+
+<p>
+    Input style. Each widget (besides patient id) can be updated via all keyboard or all mouse using the arrows 
+    and/or sliders provided with the widget.
+</p>
+
+<button id="timingDataButton" type="button" class="btn btn-default" aria-label="..." onclick="openTimingData()">Timing Data</button>
 <button onclick="OpenCreateWindow()" class="btn btn-default">New Patient</button>
 
 @(Html.Kendo().Window()
@@ -16,3 +106,50 @@
     .Actions(actions => actions.Close())
     .AutoFocus(true)    
 )
+
+@(Html.Kendo().Window()
+        .Title("Timing Data")
+        .Name("timingData")
+        .Content(
+    @<text>
+        <iframe id="spreadsheet" src="https://drive.google.com/file/d/0BwLS0q_z3G1SQWVCWVZzdnN4b3c/preview" height="480"></iframe>
+    </text>)
+         .Iframe(true)
+         .Resizable()
+         .Draggable()
+         .Visible(false)
+         .Scrollable(false)
+         .Animation(animation => {
+             animation.Open(open => {
+                 open.Zoom(ZoomDirection.In);
+                 open.Fade(FadeDirection.In);
+             });
+             animation.Close(close => {
+                 close.Zoom(ZoomDirection.Out);
+                 close.Fade(FadeDirection.Out);
+             });
+         })
+         .Events(events => events.Close("closeTimingData"))
+)
+
+<script type="text/javascript">
+    function openTimingData() {
+        $("#timingDataButton").hide();               
+
+        var window = $("#timingData").data("kendoWindow");
+        window.wrapper.css({
+            width: "80%",
+            maxWidth: "1005px",
+            height: "510px",
+        })
+        window.open();
+        window.center();
+
+        var spreadsheetWidth = $("#timingData").width() - 10;
+        $("#spreadsheet").width(spreadsheetWidth);
+    }
+
+    function closeTimingData() {
+        $("#timingDataButton").show();
+    }
+</script>

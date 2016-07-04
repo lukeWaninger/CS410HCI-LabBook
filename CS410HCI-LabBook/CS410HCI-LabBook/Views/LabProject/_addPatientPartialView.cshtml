@@ -6,7 +6,7 @@
     <div class="form-horizontal">
         <fieldset class="organizer">
             <div id="validationMessages" style="margin-bottom:10px">
-                <span id="validationAlert"></span>
+                <span id="patientIdValidationAlert"></span>
             </div>
             <legend style="text-align:center;color:ghostwhite">@DateTime.Now.ToLocalTime()</legend>
             <div class="tableRow">
@@ -53,19 +53,19 @@
                 </div>
                 <div class="col3">mmHG</div>
                 @Html.ValidationMessageFor(model => model.Diastolic)
-            </div>            
+            </div>                        
             <div class="tableRow">
-                <div class="col1">@Html.LabelFor(model => model.RespiratoryRate, new { @class = "control-label col-md-2" })</div>
-                <div class="col2">@(Html.Kendo().NumericTextBoxFor(model => model.RespiratoryRate)
-                                    .Step(1)
+                <div class="col1">@Html.LabelFor(model => model.Pulse, new { @class = "control-label col-md-2" })</div>
+                <div class="col2">
+                    @(Html.Kendo().NumericTextBoxFor(model => model.Pulse)
                                     .Min(0)
-                                    .Max(50)
-                                    .Format("0")
                                     .Decimals(1)
-                                    .Placeholder("15"))
-                </div>
-                <div class="col3">Breaths/Min</div>
-                @Html.ValidationMessageFor(model => model.RespiratoryRate)
+                                    .Step(1)
+                                    .Format("0")
+                                    .Placeholder("60"))
+            </div>
+            <div class="col3">bpm</div>
+            @Html.ValidationMessageFor(model => model.Pulse)
             </div>
             <div class="tableRow">
                 <div class="col1">@Html.LabelFor(model => model.OxygenSaturation, new { @class = "control-label col-md-2" })</div>
@@ -80,6 +80,20 @@
                 @Html.ValidationMessageFor(model => model.OxygenSaturation)
             </div>
             <div class="tableRow">
+                <div class="col1">@Html.LabelFor(model => model.RespiratoryRate, new { @class = "control-label col-md-2" })</div>
+                <div class="col2">
+                    @(Html.Kendo().NumericTextBoxFor(model => model.RespiratoryRate)
+                                    .Step(1)
+                                    .Min(0)
+                                    .Max(50)
+                                    .Format("0")
+                                    .Decimals(1)
+                                    .Placeholder("15"))
+                </div>
+                <div class="col3">Breaths/Min</div>
+                @Html.ValidationMessageFor(model => model.RespiratoryRate)
+            </div>   
+            <div class="tableRow">
                 <div class="col1">@Html.LabelFor(model => model.BloodGlucoseLevel, new { @class = "control-label col-md-2" })</div>
                 <div class="col2">
                     @(Html.Kendo().NumericTextBoxFor(model => model.BloodGlucoseLevel)
@@ -92,20 +106,8 @@
             </div>
             <div class="col3">g/dL</div>
             @Html.ValidationMessageFor(model => model.BloodGlucoseLevel)
-        </div>
-            <div class="tableRow">
-                <div class="col1">@Html.LabelFor(model => model.Pulse, new { @class = "control-label col-md-2" })</div>
-                <div class="col2">@(Html.Kendo().NumericTextBoxFor(model => model.Pulse)
-                                    .Min(0)
-                                    .Decimals(1)
-                                    .Step(1)
-                                    .Format("0")
-                                    .Placeholder("60"))
-                </div>
-                <div class="col3">bpm</div>
-                @Html.ValidationMessageFor(model => model.Pulse)
-            </div>
-            <div class="tableRow">
+            </div>                    
+            <div class="tableRow" style="height:40px">
                 <div class="col1">
                     @Html.LabelFor(model => model.PainLevel, new { @class = "control-label col-md-2" })
                 </div>
@@ -116,6 +118,7 @@
                     .SmallStep(1)
                     .LargeStep(1)
                     .Value(5)
+                    .Events(ev => ev.Change("painRangeCheck"))
                     )
                     @Html.ValidationMessageFor(model => model.Pulse)
                 </div>
@@ -142,12 +145,15 @@
 </style>
 
 <script type="text/javascript">
+    var patientIdValidationVisible = false;
+
     $(document).ready(function () {       
         $("#submitButton").hide();
 
         // focus out function for patient id
         $("#PatientId").focusout(function () {
             var id = $("#PatientId").val();
+
             if (id) {
                 $("#submitButton").show();
             }
@@ -160,121 +166,114 @@
         // lose focus action for temp
         $("#Temperature").focusout(function () {
             var val = $("#Temperature").val();
-            var popup = $("#validationAlert").kendoNotification({
-                appendTo: "#validationMessages",
-                allowHideAfter: 1000,
-                autoHideAfter: 7500,
-            }).data("kendoNotification");
 
-            if (val && val > 36 && val < 36.4 || val > 37.6 && val < 38.4) {                
-                popup.show("Patient temperature is abnormal", "alert");
+            if (val && (val > 36 && val < 36.4) || (val > 37.6 && val < 38.4)) {
+                $("#Temperature").parents().eq(3).addClass('abnormalClass');
             }
-            else if (val && val <= 36 || val >= 38.4) {
-                popup.show("Patient temperature is dangerous", "warning");
+            else if (val && (val <= 36 || val >= 38.4)) {
+                $("#Temperature").parents().eq(3).addClass('warningClass');
+            }
+            else {
+                $("#Temperature").parents().eq(3).removeClass('abnormalClass');
+                $("#Temperature").parents().eq(3).removeClass('warningClass');
             }
         })
 
         // lose focus action for systolic blood pressure
         $("#Systolic").focusout(function () {
             var val = $("#Systolic").val();
-            var popup = $("#validationAlert").kendoNotification({
-                appendTo: "#validationMessages",
-                allowHideAfter: 1000,
-                autoHideAfter: 7500,
-            }).data("kendoNotification");
 
-            if (val && val > 90 && val < 100 || val > 120 && val < 140) {
-                popup.show("Patient systolic blood pressure (SBP) is abnormal", "alert");
+            if (val && (val > 90 && val < 100) || (val > 120 && val < 140)) {
+                $("#Systolic").parents().eq(3).addClass('abnormalClass');
             }
-            else if (val && val <= 90 || val >= 140) {
-                popup.show("Patient systolic blood pressure (SBP) is dangerous", "warning");
+            else if (val && (val <= 90 || val >= 140)) {
+                $("#Systolic").parents().eq(3).addClass('warningClass');
+            }
+            else {
+                $("#Systolic").parents().eq(3).removeClass('abnormalClass');
+                $("#Systolic").parents().eq(3).removeClass('warningClass');
             }
         })
 
         // lose focus for diastolic blood pressure
         $("#Diastolic").focusout(function () {
             var val = $("#Diastolic").val();
-            var popup = $("#validationAlert").kendoNotification({
-                appendTo: "#validationMessages",
-                allowHideAfter: 1000,
-                autoHideAfter: 7500,
-            }).data("kendoNotification");
 
             if (val && val > 50 && val < 60 || val > 80 && val < 90) {
-                popup.show("Patient diastolic blood pressure (DBP) is abnormal", "alert");
+                $("#Diastolic").parents().eq(3).addClass('abnormalClass');
             }
-            else if (val && val <= 50 || val >= 90) {
-                popup.show("Patient diastolic blood pressure (DBP) is dangerous", "warning");
+            else if (val && (val <= 50 || val >= 90)) {
+                $("#Diastolic").parents().eq(3).addClass('warningClass');
+            }
+            else {
+                $("#Diastolic").parents().eq(3).removeClass('abnormalClass');
+                $("#Diastolic").parents().eq(3).removeClass('warningClass');
             }
         })
 
         // lose focus for respiratory rate
         $("#RespiratoryRate").focusout(function () {
             var val = $("#RespiratoryRate").val();
-            var popup = $("#validationAlert").kendoNotification({
-                appendTo: "#validationMessages",
-                allowHideAfter: 1000,
-                autoHideAfter: 7500,
-            }).data("kendoNotification");
 
-            if (val && val >= 10 && val <= 11 || val >= 20 && val <= 24) {
-                popup.show("Patient respiratory rate is abnormal", "alert");
+            if (val && (val >= 10 && val <= 11) || (val >= 20 && val <= 24)) {
+                $("#RespiratoryRate").parents().eq(3).addClass('abnormalClass');
             }
-            else if (val && val < 10 || val > 24) {
-                popup.show("Patient respiratory rate is dangerous", "warning");
+            else if (val && (val < 10 || val > 24)) {
+                $("#RespiratoryRate").parents().eq(3).addClass('warningClass');
+            }
+            else {
+                $("#RespiratoryRate").parents().eq(3).removeClass('abnormalClass');
+                $("#RespiratoryRate").parents().eq(3).removeClass('warningClass');
             }
         })
 
         // lose focus for oxygen saturation
         $("#OxygenSaturation").focusout(function () {
             var val = $("#OxygenSaturation").val();
-            var popup = $("#validationAlert").kendoNotification({
-                appendTo: "#validationMessages",
-                allowHideAfter: 1000,
-                autoHideAfter: 7500,
-            }).data("kendoNotification");
 
-            if (val && val >= .90 && val <= .92) {
-                popup.show("Patient oxygen saturation is abnormal", "alert");
+            if (val && (val >= .90 && val <= .92)) {
+                $("#OxygenSaturation").parents().eq(3).addClass('abnormalClass');
             }
             else if (val && val < .90) {
-                popup.show("Patient oxygen saturation is abnormal", "warning");
+                $("#OxygenSaturation").parents().eq(3).addClass('warningClass');
+            }
+            else {
+                $("#OxygenSaturation").parents().eq(3).removeClass('abnormalClass');
+                $("#OxygenSaturation").parents().eq(3).removeClass('warningClass');
             }
         })
 
         // lose focus for pulse
         $("#Pulse").focusout(function () {
             var val = $("#Pulse").val();
-            var popup = $("#validationAlert").kendoNotification({
-                appendTo: "#validationMessages",
-                allowHideAfter: 1000,
-                autoHideAfter: 7500,
-            }).data("kendoNotification");
 
-            if (val && val >= 50 && val <= 59 || val >= 100 && val <= 110) {
-                popup.show("Patient pulse is abnormal", "alert");
+            if (val && (val >= 50 && val <= 59) || (val >= 100 && val <= 110)) {
+                $("#Pulse").parents().eq(3).addClass('abnormalClass');
             }
-            else if (val && val < 50 || val > 110) {
-                popup.show("Patient pulse is dangerous", "warning");
+            else if (val && (val < 50 || val > 110)) {
+                $("#Pulse").parents().eq(3).addClass('warningClass');
+            }
+            else {
+                $("#Pulse").parents().eq(3).removeClass('abnormalClass');
+                $("#Pulse").parents().eq(3).removeClass('warningClass');
             }
         })
 
         // lose focus for blood glucose
         $("#BloodGlucoseLevel").focusout(function () {
             var val = $("#BloodGlucoseLevel").val();
-            var popup = $("#validationAlert").kendoNotification({
-                appendTo: "#validationMessages",
-                allowHideAfter: 1000,
-                autoHideAfter: 7500,
-            }).data("kendoNotification");
 
-            if (val && val >= 60 && val <= 69 || val >= 120 && val <= 200) {
-                popup.show("Patient blood glucose level is abnormal", "alert");
+            if (val && (val >= 60 && val <= 69) || (val >= 120 && val <= 200)) {
+                $("#BloodGlucoseLevel").parents().eq(3).addClass('abnormalClass');
             }
-            else if (val && val < 50 || val > 110) {
-                popup.show("Patient blood glucose level is dangerous", "warning");
+            else if (val && (val < 50 || val > 110)) {
+                $("#BloodGlucoseLevel").parents().eq(3).addClass('warningClass');
             }
-        })
+            else {
+                $("#BloodGlucoseLevel").parents().eq(3).removeClass('abnormalClass');
+                $("#BloodGlucoseLevel").parents().eq(3).removeClass('warningClass');
+            }
+        })        
     })
 
     function OpenCreateWindow() {
@@ -291,12 +290,20 @@
         var patientId = $("#PatientId").val();
         
         if (!patientId) {
-            var patientIdNotification = $("#validationAlert").kendoNotification({
-                appendTo: "#validationMessages",
-                allowHideAfter: 1000,
-                autoHideAfter: 0,
-            }).data("kendoNotification");
-            patientIdNotification.show("Patient Id is required", "error");
+            if (!patientIdValidationVisible) {
+                var patientIdNotification = $("#patientIdValidationAlert").kendoNotification({
+                    appendTo: "#validationMessages",
+                    allowHideAfter: 1000,
+                    autoHideAfter: 0,
+                    show: function () {
+                        patientIdValidationVisible = true;
+                    },
+                    hide: function () {
+                        patientIdValidationVisible = false;
+                    },
+                }).data("kendoNotification");
+                patientIdNotification.show("Patient Id is required", "error");
+            }
         }
         else {
             $("#submitButton").click();
@@ -304,5 +311,18 @@
             wnd.close();
         }
     }
+
+    function painRangeCheck() {
+        var slider = $("#PainLevel").data("kendoSlider");
+        var val = slider.value();
+
+        if (val && val > 6) {
+            $("#PainLevel").parents().eq(3).addClass('warningClass');
+        }
+        else {
+            $("#PainLevel").parents().eq(3).removeClass('warningClass');
+        }
+    }
+    
 </script>
 

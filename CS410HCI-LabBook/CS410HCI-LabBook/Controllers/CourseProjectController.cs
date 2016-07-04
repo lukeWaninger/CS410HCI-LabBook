@@ -9,12 +9,6 @@ namespace CS410HCI_LabBook.Controllers
     public class CourseProjectController : Controller
     {
         // GET: CourseProject
-        public ActionResult CourseProjectMain()
-        {
-            return View();
-        }
-
-        // GET: CourseProject
         public ActionResult Ethnography()
         {
             return View();

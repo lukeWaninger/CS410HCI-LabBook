@@ -703,7 +703,6 @@
     <Content Include="Views\LabProject\Three.cshtml" />
     <Content Include="Views\LabProject\Four.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\CourseProject\CourseProjectMain.cshtml" />
     <Content Include="Views\CourseProject\Ethnography.cshtml" />
     <Content Include="Views\CourseProject\Scenarios.cshtml" />
     <Content Include="Views\CourseProject\DraftLayout.cshtml" />
