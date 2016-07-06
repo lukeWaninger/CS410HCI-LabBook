@@ -148,19 +148,20 @@
     var patientIdValidationVisible = false;
 
     $(document).ready(function () {       
-        $("#submitButton").hide();
+        //$("#submitButton").hide();
 
         // focus out function for patient id
         $("#PatientId").focusout(function () {
-            var id = $("#PatientId").val();
+            /*var id = $("#PatientId").val();
 
             if (id) {
                 $("#submitButton").show();
             }
             else {
                 $("#submitButton").hide();
-                validate();
-            }
+            }*/
+
+            validate();
         })
 
         // lose focus action for temp
