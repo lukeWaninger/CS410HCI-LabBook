@@ -126,7 +126,9 @@
         </fieldset>
         <br />
         <div style="text-align:center">
-            <button id="submitButton" onclick="validate()" class="btn btn-success">SUBMIT</button>
+            <button id="resetButton" class="btn btn-default">Dummy Test</button>
+            <button id="resetButton" onclick="reset()" class="btn btn-default">RESET</button>
+            <button id="submitButton" onclick="submit()" class="btn btn-success">SUBMIT</button>
         </div>
     </div>
 }
@@ -145,23 +147,17 @@
 </style>
 
 <script type="text/javascript">
+    function isUndef(obj) {
+        return typeof obj === "undefined"; 
+    }
+
     var patientIdValidationVisible = false;
 
     $(document).ready(function () {       
-        //$("#submitButton").hide();
-
         // focus out function for patient id
         $("#PatientId").focusout(function () {
-            /*var id = $("#PatientId").val();
-
-            if (id) {
-                $("#submitButton").show();
-            }
-            else {
-                $("#submitButton").hide();
-            }*/
-
-            validate();
+            var id = $("#PatientId").val();
+            (isUndef(id) || id.length==0) && validate();
         })
 
         // lose focus action for temp
@@ -287,10 +283,14 @@
         wnd.center().open();
     }
 
+    function reset() {
+        //TODO: reset form elements 
+    }
+
     function validate() {
         var patientId = $("#PatientId").val();
         
-        if (!patientId) {
+        if (isUndef(patientId) || patientId.length==0) {
             if (!patientIdValidationVisible) {
                 var patientIdNotification = $("#patientIdValidationAlert").kendoNotification({
                     appendTo: "#validationMessages",
@@ -304,13 +304,15 @@
                     },
                 }).data("kendoNotification");
                 patientIdNotification.show("Patient Id is required", "error");
+                return false; 
             }
+        } else {
+            return true; 
         }
-        else {
-            $("#submitButton").click();
-            var wnd = $("#CreateWindow").data("kendoWindow");
-            wnd.close();
-        }
+    }
+
+    function submit() {
+        validate() && $("#CreateWindow").data("kendoWindow").close();
     }
 
     function painRangeCheck() {
