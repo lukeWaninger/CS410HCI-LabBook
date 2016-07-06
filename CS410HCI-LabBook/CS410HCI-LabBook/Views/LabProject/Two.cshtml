@@ -81,7 +81,7 @@
 
 <p>
     Input bounds. Each input widget is bound to with its respective minimum and/or maximum values. For example,
-    an input for a percentage cannot exceed 1. No input can be below.
+    an input for a percentage cannot exceed 1, no input can be below zero and, no numeric input will accept text characters.
 </p>
 
 <p>
@@ -130,7 +130,7 @@
                  close.Fade(FadeDirection.Out);
              });
          })
-         .Actions(actions => actions.Close().Refresh())
+         .Actions(actions => actions.Close())
          .Events(events => events.Close("closeTimingData"))
          )
 
