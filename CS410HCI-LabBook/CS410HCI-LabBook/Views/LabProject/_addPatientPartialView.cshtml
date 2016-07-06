@@ -1,14 +1,18 @@
 ﻿@model CS410HCI_LabBook.ViewModels.LabProject2ViewModel
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
+@*@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()*@
 
     <div class="form-horizontal">
         <fieldset class="organizer">
             <div id="validationMessages" style="margin-bottom:10px">
                 <span id="patientIdValidationAlert"></span>
             </div>
-            <legend style="text-align:center;color:ghostwhite">@DateTime.Now.ToLocalTime()</legend>
+            <legend style="text-align:center;color:ghostwhite;padding-bottom:5px">@DateTime.Now.ToLocalTime()
+                <a data-toggle="tooltip" title="Reset the form">
+                    <span class="resetButton glyphicon glyphicon-fire" onclick="reset()"></span>
+                </a>
+            </legend>
             <div class="tableRow">
                 <div class="col1">@Html.LabelFor(model => model.PatientId, new { @class = "control-label col-md-2 required" })</div>
                 <div class="col2">@Html.TextBoxFor(model => model.PatientId, new { @class = "form-control makeitshort" })</div>
@@ -126,23 +130,18 @@
         </fieldset>
         <br />
         <div style="text-align:center">
-            <button id="resetButton" class="btn btn-default">Dummy Test</button>
-            <button id="resetButton" onclick="reset()" class="btn btn-default">RESET</button>
+            @*<button id="resetButton" class="btn btn-default">Dummy Test</button>
+            <button id="resetButton" onclick="reset()" class="btn btn-default">RESET</button>*@
             <button id="submitButton" onclick="submit()" class="btn btn-success">SUBMIT</button>
         </div>
     </div>
-}
+@*}*@
 
 <style>
     #PatientId {
         padding-left: 5px;
         height: 15px;
         width: 153px;
-    }
-    .required:after {
-        content: "*";
-        font-weight: bold;
-        color: red;
     }
 </style>
 
@@ -284,7 +283,15 @@
     }
 
     function reset() {
-        //TODO: reset form elements 
+        $("#PatientId").val(null);
+        $("#Temperature").data("kendoNumericTextBox").value(null);
+        $("#Systolic").data("kendoNumericTextBox").value(null);
+        $("#Diastolic").data("kendoNumericTextBox").value(null);
+        $("#Pulse").data("kendoNumericTextBox").value(null);
+        $("#OxygenSaturation").data("kendoNumericTextBox").value(null);
+        $("#RespiratoryRate").data("kendoNumericTextBox").value(null);
+        $("#BloodGlucoseLevel").data("kendoNumericTextBox").value(null);
+        $("#PainLevel").data("kendoSlider").value(5);        
     }
 
     function validate() {

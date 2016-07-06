@@ -90,3 +90,17 @@ legend.collapsible:hover {
     background-color: rgba(255, 224, 0, .62);
     border-radius: 4px;
 }
+
+.resetButton {
+    float:right;   
+}
+
+.resetButton:hover {
+    color:orangered;
+}
+
+    .required:after {
+        content: "*";
+        font-weight: bold;
+        color: red;
+    }
