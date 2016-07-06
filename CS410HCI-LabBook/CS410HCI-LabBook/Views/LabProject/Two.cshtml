@@ -103,7 +103,8 @@
     .Content(Html.Partial("_addPatientPartialView").ToHtmlString())
     .Draggable()
     .Visible(false)
-    .Actions(actions => actions.Close())
+    .Actions(actions => actions.Refresh().Close())
+    .Events(events => events.Refresh("reset"))
     .AutoFocus(true)    
 )
 
@@ -129,8 +130,9 @@
                  close.Fade(FadeDirection.Out);
              });
          })
+         .Actions(actions => actions.Close().Refresh())
          .Events(events => events.Close("closeTimingData"))
-)
+         )
 
 <script type="text/javascript">
     function openTimingData() {

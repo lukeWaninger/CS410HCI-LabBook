@@ -3,16 +3,12 @@
 @*@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()*@
 
-    <div class="form-horizontal">
+    <div id="form" class="form-horizontal">
         <fieldset class="organizer">
             <div id="validationMessages" style="margin-bottom:10px">
                 <span id="patientIdValidationAlert"></span>
             </div>
-            <legend style="text-align:center;color:ghostwhite;padding-bottom:5px">@DateTime.Now.ToLocalTime()
-                <a data-toggle="tooltip" title="Reset the form">
-                    <span class="resetButton glyphicon glyphicon-fire" onclick="reset()"></span>
-                </a>
-            </legend>
+            <legend>@DateTime.Now.ToLocalTime()</legend>
             <div class="tableRow">
                 <div class="col1">@Html.LabelFor(model => model.PatientId, new { @class = "control-label col-md-2 required" })</div>
                 <div class="col2">@Html.TextBoxFor(model => model.PatientId, new { @class = "form-control makeitshort" })</div>
@@ -152,7 +148,7 @@
 
     var patientIdValidationVisible = false;
 
-    $(document).ready(function () {       
+    $(document).ready(function () {
         // focus out function for patient id
         $("#PatientId").focusout(function () {
             var id = $("#PatientId").val();
@@ -282,7 +278,8 @@
         wnd.center().open();
     }
 
-    function reset() {
+    function reset(e) {
+        // start slawpy
         $("#PatientId").val(null);
         $("#Temperature").data("kendoNumericTextBox").value(null);
         $("#Systolic").data("kendoNumericTextBox").value(null);
@@ -291,7 +288,16 @@
         $("#OxygenSaturation").data("kendoNumericTextBox").value(null);
         $("#RespiratoryRate").data("kendoNumericTextBox").value(null);
         $("#BloodGlucoseLevel").data("kendoNumericTextBox").value(null);
-        $("#PainLevel").data("kendoSlider").value(5);        
+        $("#PainLevel").data("kendoSlider").value(5);
+
+        var $inputs = $('#form').find('input');
+        $inputs.trigger('blur');
+
+        $("#CreateWindow").focus();
+        $("#PatientId").focus();
+        $("#patientIdValidationAlert").data("kendoNotification").hide();
+        painRangeCheck();
+        // end slawpy
     }
 
     function validate() {
