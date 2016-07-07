@@ -38,12 +38,12 @@
     Temperature is the easiest and quickest measurement to gather taking roughly 5 seconds for a
     trained nurse (the intended user base) to complete. It was elected as the first input control 
     as it is most commonly the first measurement to gather. An interesting point was made from the
-    user when talking about how to best switch between Fahrenheit and Celsius. She had difficulty
-    relating to Fahrenheit! As a travel nurse, this specific user worked in many different hospitals
-    across the country and all of them only used Celsius. Because of this, we decided to scratch the
-    unit switching feature all together. From a data perspective, this eliminates erroneous data 
-    from getting into the system. For example, doing this precludes a user from accidentally 
-    entering a Celsius measurement with a Fahrenheit unit. 
+    user when talking about how to best switch between Fahrenheit and Celsius. As a travel nurse,
+    this specific user worked in many different hospitals across the country and all of them only
+    used Celsius. Because of this, we decided to scratch the unit switching feature all together. 
+    From a data perspective, this eliminates erroneous data from getting into the system. For
+    example, doing this precludes a user from accidentally entering a Celsius measurement with a 
+    Fahrenheit unit. 
 </p>
 
 <p>
@@ -76,12 +76,11 @@
     dangerous range. The ranges are domain specific and have been supplied by the users. They
     are shown in the document below. If a measurement entered falls into a specific range, the user
     is alerted via a color change of the table row in which it resides.
-    from the interface by clicking it.
 </p>
 
 <p>
     Input bounds. Each input widget is bound to with its respective minimum and/or maximum values. For example,
-    an input for a percentage cannot exceed 1. No input can be below.
+    an input for a percentage cannot exceed 1 and no input can even be entered below zero.
 </p>
 
 <p>
