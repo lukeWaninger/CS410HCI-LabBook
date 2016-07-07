@@ -1,14 +1,14 @@
 ﻿@model CS410HCI_LabBook.ViewModels.LabProject2ViewModel
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
+@*@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()*@
 
-    <div class="form-horizontal">
+    <div id="form" class="form-horizontal">
         <fieldset class="organizer">
             <div id="validationMessages" style="margin-bottom:10px">
                 <span id="patientIdValidationAlert"></span>
             </div>
-            <legend style="text-align:center;color:ghostwhite">@DateTime.Now.ToLocalTime()</legend>
+            <legend>@DateTime.Now.ToLocalTime()</legend>
             <div class="tableRow">
                 <div class="col1">@Html.LabelFor(model => model.PatientId, new { @class = "control-label col-md-2 required" })</div>
                 <div class="col2">@Html.TextBoxFor(model => model.PatientId, new { @class = "form-control makeitshort" })</div>
@@ -126,10 +126,12 @@
         </fieldset>
         <br />
         <div style="text-align:center">
-            <button id="submitButton" onclick="validate()" class="btn btn-success">SUBMIT</button>
+            @*<button id="resetButton" class="btn btn-default">Dummy Test</button>
+            <button id="resetButton" onclick="reset()" class="btn btn-default">RESET</button>*@
+            <button id="submitButton" onclick="submit()" class="btn btn-success">SUBMIT</button>
         </div>
     </div>
-}
+@*}*@
 
 <style>
     #PatientId {
@@ -137,30 +139,20 @@
         height: 15px;
         width: 153px;
     }
-    .required:after {
-        content: "*";
-        font-weight: bold;
-        color: red;
-    }
 </style>
 
 <script type="text/javascript">
+    function isUndef(obj) {
+        return typeof obj === "undefined"; 
+    }
+
     var patientIdValidationVisible = false;
 
-    $(document).ready(function () {       
-        $("#submitButton").hide();
-
+    $(document).ready(function () {
         // focus out function for patient id
         $("#PatientId").focusout(function () {
             var id = $("#PatientId").val();
-
-            if (id) {
-                $("#submitButton").show();
-            }
-            else {
-                $("#submitButton").hide();
-                validate();
-            }
+            (isUndef(id) || id.length==0) && validate();
         })
 
         // lose focus action for temp
@@ -286,10 +278,32 @@
         wnd.center().open();
     }
 
+    function reset(e) {
+        // start slawpy
+        $("#PatientId").val(null);
+        $("#Temperature").data("kendoNumericTextBox").value(null);
+        $("#Systolic").data("kendoNumericTextBox").value(null);
+        $("#Diastolic").data("kendoNumericTextBox").value(null);
+        $("#Pulse").data("kendoNumericTextBox").value(null);
+        $("#OxygenSaturation").data("kendoNumericTextBox").value(null);
+        $("#RespiratoryRate").data("kendoNumericTextBox").value(null);
+        $("#BloodGlucoseLevel").data("kendoNumericTextBox").value(null);
+        $("#PainLevel").data("kendoSlider").value(5);
+
+        var $inputs = $('#form').find('input');
+        $inputs.trigger('blur');
+
+        $("#CreateWindow").focus();
+        $("#PatientId").focus();
+        $("#patientIdValidationAlert").data("kendoNotification").hide();
+        painRangeCheck();
+        // end slawpy
+    }
+
     function validate() {
         var patientId = $("#PatientId").val();
         
-        if (!patientId) {
+        if (isUndef(patientId) || patientId.length==0) {
             if (!patientIdValidationVisible) {
                 var patientIdNotification = $("#patientIdValidationAlert").kendoNotification({
                     appendTo: "#validationMessages",
@@ -303,13 +317,15 @@
                     },
                 }).data("kendoNotification");
                 patientIdNotification.show("Patient Id is required", "error");
+                return false; 
             }
+        } else {
+            return true; 
         }
-        else {
-            $("#submitButton").click();
-            var wnd = $("#CreateWindow").data("kendoWindow");
-            wnd.close();
-        }
+    }
+
+    function submit() {
+        validate() && $("#CreateWindow").data("kendoWindow").close();
     }
 
     function painRangeCheck() {
