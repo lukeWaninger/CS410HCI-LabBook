@@ -519,6 +519,9 @@
     <Content Include="Content\kendo\2015.1.429\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\2015.1.429\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2015.1.429\Uniform\sprite_kpi_2x.png" />
+    <Content Include="Content\Recourse Documents\Action.JPG" />
+    <Content Include="Content\Recourse Documents\Content Control Model.jpg" />
+    <Content Include="Content\Recourse Documents\Object.JPG" />
     <Content Include="Content\Recourse Documents\ToolShed Layout.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
