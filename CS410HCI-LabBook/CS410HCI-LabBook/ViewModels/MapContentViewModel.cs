@@ -45,12 +45,12 @@ namespace CS410HCI_LabBook.HelperObjects {
 
     public class Section {
         public int Id { get; set; }
-        public string Name { get; set; }        
+        public string Name { get; set; }
         public List<Tool> ToolList { get; set; }
     }
 
     public class Tool {
         public int Id { get; set; }
-        public string Name { get; set; }        
+        public string Name { get; set; }
     }
 }
