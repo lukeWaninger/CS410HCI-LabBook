@@ -1,4 +1,4 @@
-﻿
+﻿@model CS410HCI_LabBook.ViewModels.MapContentViewModel
 @{
     ViewBag.Title = "Draft Layout";
 }
@@ -9,4 +9,80 @@
         Work with perspective users to develop a draft layout of the user interface for your application.
     </p>
 </div>
+<div>
+    <button onclick="OpenToolShedMap()" class="btn btn-default">Tool Shed Map</button>
+</div>
 
+
+
+@(Html.Kendo().Window()
+        .Title("Tool Shed Item Lookup")
+        .Name("toolShedWindow")
+        .Content(
+        @<text>
+<div class="col-lg-6, searchPanel">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Search!</button>
+        </span>
+    </div>
+</div>
+<img id="toolShedImage" src="~/Content/Recourse Documents/ToolShed Layout.jpg" />          
+        </text>)
+         .Iframe(false)
+         .Draggable()
+         .Visible(false)
+         .Scrollable(false)
+         .Animation(animation => {
+             animation.Open(open => {
+                 open.Zoom(ZoomDirection.In);
+                 open.Fade(FadeDirection.In);
+             });
+             animation.Close(close => {
+                 close.Zoom(ZoomDirection.Out);
+                 close.Fade(FadeDirection.Out);
+             });
+         })
+)
+
+<script type="text/javascript">
+    function Search() {
+
+    }
+
+    function OpenToolShedMap() {
+        var window = $("#toolShedWindow").data("kendoWindow");
+        window.wrapper.css({
+            width: "80%",
+            height: "80%",
+            //maxWidth: "582px",
+            //maxHeight: "665px"
+        })
+        window.open();
+        window.center();
+    }
+</script>
+
+
+<style>
+    #toolShedImage {
+        width: 100%;
+        height: 100%;
+    }
+
+    .input-group {
+        display:inline-flex;
+    }
+
+    #toolShedMap {
+        text-align: center;
+        vertical-align: middle;        
+    }
+
+    .searchPanel {
+        text-align: left;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+</style>

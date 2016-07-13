@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CS410HCI_LabBook.HelperObjects {
-    public class DataContent {
+namespace CS410HCI_LabBook.ViewModels {
+    public class MapContentViewModel {
         public List<Section> Sections { get; set; }
+        public string Search { get; set; }
 
-        public DataContent() {
+        public MapContentViewModel() {
             SetupData();
         }
-
-
 
         private void SetupData() {
             this.Sections = new List<Section>() {
