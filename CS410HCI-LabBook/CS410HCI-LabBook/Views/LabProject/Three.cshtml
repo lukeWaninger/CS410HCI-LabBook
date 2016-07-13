@@ -7,13 +7,34 @@
 </div>
 
 <div>
-    <h4>Content</h4>
     <p>
-
+        Writing an android application is both challenging and rewarding. This project resulted in a pizza and drink ordering android application. 
+        Users can add pizzas and drinks to an order list, then review their order and purchase it. The review screen shows users helpful descriptions 
+        of each item as well as a total purchase amount. On the main screen, users can choose from a set of pizza and drink sizes, as well as a number
+        of pizza toppings and drink types.
     </p>
+    <p>
+        While working with users, we found that they wanted a way to update their pizzas and drinks quickly. Because of this, we built an update 
+        functionality on the review order screen. By clicking the blue icon with arrows pointing to one-another (a common icon for updating something), 
+        users can see their pizza or drink order, make changes, and update. This updates the review screen as well as the total purchase amount. In order 
+        to allow safe exploration, we also allow users to cancel out of the update screen. If users simply want to remove an entire pizza or drink from 
+        the order, they can click the red X icon, which drops the item from the order and updates the total purchase amount.
+    </p>
+    <p>
+        User testing helped us explore the subtleties of android development and avoid some software bugs. For example, users wanted to know what would 
+        happen if the phone was tilted while on the update, review, or main screen. By default, android resets the application! This would result in a 
+        lost order and the user having to start over again. By accounting for this, our application handles phone tilting perfectly by simply changing 
+        the orientation of the screen and not doing anything else. Another example is a long order. Users added dozens of pizzas and drinks. We found 
+        that we needed to add scrollability to our application screens in order to account for long orders or phones with very small displays. By adding 
+        scrollability, our application can be used on any compatible android device and users can simply scroll through long orders. Finally, users 
+        indicated they would like a customized "Thank You" message after purchasing their order, just to indicate that the order completed and add some 
+        customer service into the user experience. On purchase, we thank the user for their order, tell them that their order is on their way, and display
+        a pizza icon. 
+    </p>
+
     <form action="https://docs.google.com/uc">
         <input type="hidden" name="export" value="download" />
-        <input type="hidden" name="id" value="0BwLS0q_z3G1SZ2dqa1JNNHNHVEE" />
+        <input type="hidden" name="id" value="0BwLS0q_z3G1SdFhaa3BwZUhmRFk" />
         <input type="submit" class="btn btn-default" aria-label="..." value="Download APK">
     </form>
 </div>
