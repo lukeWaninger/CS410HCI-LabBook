@@ -3,86 +3,62 @@
     ViewBag.Title = "Draft Layout";
 }
 
-<div class="jumbotron">
+<div id="jumboWidth" class="jumbotron">
     <h2>2.3 - Draft layout</h2>
     <p>
         Work with perspective users to develop a draft layout of the user interface for your application.
     </p>
 </div>
 <div>
-    <button onclick="OpenToolShedMap()" class="btn btn-default">Tool Shed Map</button>
+    <h4>Experience</h4>
+    <p>
+        The users were very helpful with the drafting process. The initial draft was boxy and did not make 
+        use of much color. The users advised us to use rounded borders around rectangles and also to use
+        color to highlight tool sections that match a search. Together, we chose the color green to indicate 
+        a matching section. We all wanted the matching section to really pop out at users so we chose to box
+        it in with a dark green border and make the box large enough to draw people's attention. Users also 
+        preferred to use separating lines between sections and a helpful message at the top indicating when 
+        the library will close. Another helpful tip we received while working with them was with the 
+        user-friendliness of the search. At first, if a given tool could reside in several sections, we were
+        going to have users choose a section from a list of matches and then we would highlight that section.
+        However, a user came up with a clever solution: just highlight in real-time all of the matching sections 
+        as the user types. That is why our search screen draft page not only has the helpful type-ahead, but the
+        sections related to the type-ahead are already highlighted. 
+    </p>
+
+    <br />
+
+    <h4>Draft Layout Screen Shots</h4>
+    <h5>Initial Screen</h5>
+    <img class="layoutImages" src="https://510hci.mybalsamiq.com/mockups/4762406.png" />
+
+    <br />
+    <h5>Search Screen</h5>
+    <img class="layoutImages" src="https://510hci.mybalsamiq.com/mockups/4762337.png" />
+
+    <br />
+    <h5>Map Highlight Screen</h5>
+    <img class="layoutImages" src="https://510hci.mybalsamiq.com/mockups/4762018.png" />
+
+    <br />
+    <h5>Help Screen</h5>
+    <img class="layoutImages" src="https://510hci.mybalsamiq.com/mockups/4762411.png" />
 </div>
-
-
-
-@(Html.Kendo().Window()
-        .Title("Tool Shed Item Lookup")
-        .Name("toolShedWindow")
-        .Content(
-        @<text>
-<div class="col-lg-6, searchPanel">
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for...">
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Search!</button>
-        </span>
-    </div>
-</div>
-<img id="toolShedImage" src="~/Content/Recourse Documents/ToolShed Layout.jpg" />          
-        </text>)
-         .Iframe(false)
-         .Draggable()
-         .Visible(false)
-         .Scrollable(false)
-         .Animation(animation => {
-             animation.Open(open => {
-                 open.Zoom(ZoomDirection.In);
-                 open.Fade(FadeDirection.In);
-             });
-             animation.Close(close => {
-                 close.Zoom(ZoomDirection.Out);
-                 close.Fade(FadeDirection.Out);
-             });
-         })
-)
-
-<script type="text/javascript">
-    function Search() {
-
-    }
-
-    function OpenToolShedMap() {
-        var window = $("#toolShedWindow").data("kendoWindow");
-        window.wrapper.css({
-            width: "80%",
-            height: "80%",
-            //maxWidth: "582px",
-            //maxHeight: "665px"
-        })
-        window.open();
-        window.center();
-    }
-</script>
-
 
 <style>
-    #toolShedImage {
-        width: 100%;
-        height: 100%;
-    }
-
-    .input-group {
-        display:inline-flex;
-    }
-
-    #toolShedMap {
-        text-align: center;
-        vertical-align: middle;        
-    }
-
-    .searchPanel {
-        text-align: left;
-        padding: 0;
-        margin-bottom: 10px;
+    .layoutImages {
+        display: block;
+        width: auto;
+        height: auto;
     }
 </style>
+
+<script type="text/javascript">
+    $(document).ready(resize());
+    $(window).resize(resize());
+
+    function resize() {
+        var imageWidth = $("#jumboWidth").width();
+        $(".layoutImages").width(imageWidth);
+    }
+</script>

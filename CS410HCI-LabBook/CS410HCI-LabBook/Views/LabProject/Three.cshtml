@@ -2,7 +2,7 @@
     ViewBag.Title = "Project 3";
 }
 
-<div class="jumbotron">
+<div id ="jumbo" class="jumbotron">
     <h3>Lab Project 3 - Develop a user interface for smart phone application.</h3>
 </div>
 
@@ -32,9 +32,44 @@
         a pizza icon. 
     </p>
 
+    <p>
+        Below are a few screen-shots of the interface pages.
+    </p>
+    <div style="text-align:center;">
+        <img id="heightSet" class="apkScreenShots" src="~/Content/Recourse Documents/apk5.png" />
+        <img class="apkScreenShots" src="~/Content/Recourse Documents/apk1.png" />
+        <img class="apkScreenShots" src="~/Content/Recourse Documents/apk2.png" />
+        <img class="apkScreenShots" src="~/Content/Recourse Documents/apk3.png" />
+        <img class="apkScreenShots" src="~/Content/Recourse Documents/apk4.png" />
+    </div>
+
+    <br />
     <form action="https://docs.google.com/uc">
         <input type="hidden" name="export" value="download" />
         <input type="hidden" name="id" value="0BwLS0q_z3G1SdFhaa3BwZUhmRFk" />
         <input type="submit" class="btn btn-default" aria-label="..." value="Download APK">
     </form>
 </div>
+
+<style>
+    .apkScreenShots {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(resize());
+    $(window).resize(resize());
+
+    function resize() {
+        var imageWidth = $("#jumbo").width() / 3 - 15;
+        $(".apkScreenShots").width(imageWidth);
+
+        var imageHeight = $("#heightSet").height();
+        $(".apkScreenShots").height(imageHeight);
+    }
+</script>
