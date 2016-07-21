@@ -244,3 +244,9 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /CS410HCI-LabBook/CS410HCI-LabBook/Properties/PublishProfiles
+/CS410HCI-LabBook/CS410HCI-LabBook/Scripts/jquery-ui.min.js
+/CS410HCI-LabBook/CS410HCI-LabBook/Scripts/jquery-ui.js
+/CS410HCI-LabBook/CS410HCI-LabBook/Content/jquery-ui.structure.min.css
+/CS410HCI-LabBook/CS410HCI-LabBook/Content/jquery-ui.structure.css
+/CS410HCI-LabBook/CS410HCI-LabBook/Content/jquery-ui.min.css
+/CS410HCI-LabBook/CS410HCI-LabBook/Content/jquery-ui.css

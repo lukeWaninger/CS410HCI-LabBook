@@ -11,64 +11,99 @@
 <div>
     <h4>Discussion Overview</h4>
     <p>
-        The focus group went extremely well. Many discussion points came about that will greatly improve the quality of the software.
-        Below are the minutes and discussion points gathered from the group.
+        A client participant focus group was performed with three current library users which went very
+        well. A mock-up of the application was provided to the group followed by a moderator led discussion.
+        Many discussion points came about that will greatly improve the quality of the software. Below is a
+        listing of the modifications we are considering along with the discussion points and minutes gathered 
+        from our time with the group.
+
+        The discussion was centered around three main questions.
+        <ol>
+            <li>Is the focus and purpose of the application clear?</li>
+            <li>Is anything missing from the map?</li>
+            <li>How can we keep the map from becoming cluttered while portraying the necessary information?</li>
+        </ol>
     </p>
-    <ol>
-        <li>A brief introduction should be included to explain the map and its purpose.</li>
-        <li>Section numbers in the map are confusing.</li>
-        <ul>
-            <li>From discussion: they may be necessary if people use them to find things in the library.</li>
-            ----we will have to check in on that
-        </ul>
-        <li>Less ambiguous orientation should be included on the map</li>
-        <ul>
-            <li>Place a door on the map to indicate the entrance more clearly.</li>
-            <li>The entrance and exit text should be composed of larger letters and be more clear, perhaps a different color.</li>
-            <li>Place street names on the outside of the map so that people can orient themselves on the map.</li>
-            <li>Include a "you are here" indication on the map, assuming we are using a kiosk (perhaps only do this for the kiosk).</li>
-            <li>Indicate North and South walls.</li>
+    <h4>Resulting Considerations</h4>
+    <p>
+        <ol>
             <li>
-                Show the building address near the entrance indication on the map.
-                ----discussion: is this necessary? Perhaps less is more.
+                We will need to include a brief introduction of the application. How we do this is going
+                to be a challenge. The tool library will be using devices with small screens so showing 
+                too much information at any time will force the screen to quickly being cluttered.
             </li>
-        </ul>
-        <li>Use more accurate scaling for the map so that it more closely depicts the real layout.</li>
-        <li>Rename the 'Front Desk' the 'Help Desk'.</li>
-        <li>Rename the entrance the 'Door'.</li>
-        <li>Less is more for the map details.</li>
-        <ul>
-            <li>Although, would be nice to get more details with closer zoom levels.</li>
-        </ul>
-        <li>Discussion: should we indicate which side of the Help Desk is for Returns and which is for Checkouts?</li>
-        <ul>
-            <li>Agreement on not indicating: less is more.</li>
-        </ul>
-        <li>A bit of straying off-topic: we should build a robot to guide users to tools...</li>
-        <li>They like the indication of how long until the library closes.</li>
-        <ul>
-            <li>Side discussion: these tool libraries have terrible hours and weird schedules, would be nice to see the schedule too.</li>
-            <li>We could show the library weekly schedule when users click/tap/hover on the time icon.</li>
-        </ul>
-        <li>Should tool pictures be included on the map?</li>
-        <ul>
             <li>
-                Some users may not know the tool they want. Can someone find a tool by looking at pictures?
-                ----discussion: probably most tool library users know what they want they just don't know where it is in the library.
+                User-map orientation and scaling must be more clearly depicted. The tool library is surprisingly
+                small. Because of this, we initially failed to give scaling much thought. The focus group made it
+                clear that we do, in fact, need to give scale and proportion more thought. This concept will be 
+                taken forward to the UI build process.
             </li>
-        </ul>
-        <li>Would be nice for users to be able to search for tools by number</li>
-        <li>If the building is not ADA accessible, some indication on the map of that would be nice.</li>
-        <ul>
-            <li>Users may use this at home and it would be nice for them to see if the library is not ADA accessible before going to it.</li>
-        </ul>
-        <li>Users will want to know how many tools are available and their current checkout status; like a book-library.</li>
-        <li>Is this going to be embedded in SEPTL website or a standalone application?</li>
-        <ul>
             <li>
-                Discussion: if embedded, we need a link back to the website, if not embedded, no need.
-                ----perhaps we keep it standalone since this is envisioned to only be used from within the library.
+                Clients were also concerned with having more tool information readily available on the map. 
+                This took some brainstorming to decide how to best do this without cluttering the map. We decided
+                to include it as a zoom feature. If a user zooms in to a specific section of the map, tools
+                associated with that section will be loaded and displayed.
             </li>
+        </ol>
+    </p>
+    <div id="accordian">
+        <h4>Minutes</h4>
+        <ul>
+            <li>A brief introduction should be included to explain the map and its purpose.</li>
+            <li>Section numbers in the map are confusing.</li>
+            <ul>
+                <li>From discussion: they may be necessary if people use them to find things in the library.</li>
+                ----we will have to check in on that
+            </ul>
+            <li>Less ambiguous orientation should be included on the map</li>
+            <ul>
+                <li>Place a door on the map to indicate the entrance more clearly.</li>
+                <li>The entrance and exit text should be composed of larger letters and be more clear, perhaps a different color.</li>
+                <li>Place street names on the outside of the map so that people can orient themselves on the map.</li>
+                <li>Include a "you are here" indication on the map, assuming we are using a kiosk (perhaps only do this for the kiosk).</li>
+                <li>Indicate North and South walls.</li>
+                <li>
+                    Show the building address near the entrance indication on the map.
+                    ----discussion: is this necessary? Perhaps less is more.
+                </li>
+            </ul>
+            <li>Use more accurate scaling for the map so that it more closely depicts the real layout.</li>
+            <li>Rename the 'Front Desk' the 'Help Desk'.</li>
+            <li>Rename the entrance the 'Door'.</li>
+            <li>Less is more for the map details.</li>
+            <ul>
+                <li>Although, would be nice to get more details with closer zoom levels.</li>
+            </ul>
+            <li>Discussion: should we indicate which side of the Help Desk is for Returns and which is for Checkouts?</li>
+            <ul>
+                <li>Agreement on not indicating: less is more.</li>
+            </ul>
+            <li>A bit of straying off-topic: we should build a robot to guide users to tools...</li>
+            <li>They like the indication of how long until the library closes.</li>
+            <ul>
+                <li>Side discussion: these tool libraries have terrible hours and weird schedules, would be nice to see the schedule too.</li>
+                <li>We could show the library weekly schedule when users click/tap/hover on the time icon.</li>
+            </ul>
+            <li>Should tool pictures be included on the map?</li>
+            <ul>
+                <li>
+                    Some users may not know the tool they want. Can someone find a tool by looking at pictures?
+                    ----discussion: probably most tool library users know what they want they just don't know where it is in the library.
+                </li>
+            </ul>
+            <li>Would be nice for users to be able to search for tools by number</li>
+            <li>If the building is not ADA accessible, some indication on the map of that would be nice.</li>
+            <ul>
+                <li>Users may use this at home and it would be nice for them to see if the library is not ADA accessible before going to it.</li>
+            </ul>
+            <li>Users will want to know how many tools are available and their current checkout status; like a book-library.</li>
+            <li>Is this going to be embedded in SEPTL website or a standalone application?</li>
+            <ul>
+                <li>
+                    Discussion: if embedded, we need a link back to the website, if not embedded, no need.
+                    ----perhaps we keep it standalone since this is envisioned to only be used from within the library.
+                </li>
+            </ul>
         </ul>
-    </ol>
+    </div>
 </div>
