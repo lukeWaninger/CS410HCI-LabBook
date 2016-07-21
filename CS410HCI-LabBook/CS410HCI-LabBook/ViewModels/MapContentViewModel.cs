@@ -10,7 +10,7 @@ namespace CS410HCI_LabBook.ViewModels {
         public string Search { get; set; }
 
         public MapContentViewModel() {
-            SetupData();
+            SetupData(); //
         }
 
         private void SetupData() {

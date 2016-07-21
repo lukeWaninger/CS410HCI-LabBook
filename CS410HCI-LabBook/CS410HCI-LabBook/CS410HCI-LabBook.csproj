@@ -206,6 +206,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\LabProject2ViewModel.cs" />
+    <Compile Include="ViewModels\MapContentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -519,9 +520,12 @@
     <Content Include="Content\kendo\2015.1.429\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\2015.1.429\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2015.1.429\Uniform\sprite_kpi_2x.png" />
-    <Content Include="Content\Recourse Documents\Action.JPG" />
+    <Content Include="Content\Recourse Documents\apk1.png" />
+    <Content Include="Content\Recourse Documents\apk2.png" />
+    <Content Include="Content\Recourse Documents\apk3.png" />
+    <Content Include="Content\Recourse Documents\apk4.png" />
+    <Content Include="Content\Recourse Documents\apk5.png" />
     <Content Include="Content\Recourse Documents\Content Control Model.jpg" />
-    <Content Include="Content\Recourse Documents\Object.JPG" />
     <Content Include="Content\Recourse Documents\ToolShed Layout.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -546,6 +550,7 @@
     <Content Include="Content\kendo\2015.1.429\images\kendoui.ttf" />
     <Content Include="Content\kendo\2015.1.429\images\kendoui.woff" />
     <None Include="Properties\PublishProfiles\CS410HCI-LabBook - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CS410HCI-LabBook.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
