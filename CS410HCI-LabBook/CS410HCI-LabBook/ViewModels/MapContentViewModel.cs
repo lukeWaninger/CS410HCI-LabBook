@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace CS410HCI_LabBook.ViewModels {
     public class MapContentViewModel {
@@ -10,35 +12,34 @@ namespace CS410HCI_LabBook.ViewModels {
         public string Search { get; set; }
 
         public MapContentViewModel() {
+            Sections = new List<Section>();
             SetupData(); //
         }
 
         private void SetupData() {
-            this.Sections = new List<Section>() {
-                new Section {
-                    Id =  1,
-                    Name = "Rakes/Weed Whackers",
-                    ToolList = new List<Tool>() {
-                        new Tool { Id = 1, Name = "A rake" },
-                        new Tool { Id = 2, Name = "A weed whacker" },
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Content\\Recourse Documents\\SETLTools.txt";
+
+            using (StreamReader reader = new StreamReader(path)) {
+                dynamic jsonObj = JsonConvert.DeserializeObject(reader.ReadToEnd());
+
+                int j = 0;
+                foreach (dynamic obj in jsonObj) {
+                    List<Tool> tools = new List<Tool>();
+
+                    foreach (dynamic t in obj.Tools) {
+                        tools.Add(new Tool() {
+                            Id = (int)t.id,
+                            Name = t.name,
+                        });
                     }
-                },
-                new Section {
-                    Id = 2,
-                    Name = "Shovels",
-                    ToolList = new List<Tool>() {
-                        new Tool { Id = 3, Name = "A shovel" },
-                        new Tool { Id = 4, Name = "Another shovel" },
-                    },
-                },
-                new Section {
-                    Id = 3,
-                    Name = "Pry Bars",
-                    ToolList = new List<Tool> {
-                        new Tool { Id = 5, Name = "A pry bar" }
-                    }
+
+                    Sections.Add(new Section() {
+                        Id = ++j,
+                        Name = obj.name,
+                        ToolList = tools,
+                    });
                 }
-           };
+            }   
         }
     }
 

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model  CS410HCI_LabBook.ViewModels.MapContentViewModel
+@{
     ViewBag.Title = "User Interface";
 }
 
@@ -8,3 +9,30 @@
         Implement the user interface and perform usability tests that measure performance and preference criteria.
     </p>
 </div>
+<div>
+    <input style="width:280px" id="searchInput" type="text" />
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#searchInput").kendoAutoComplete({
+            minLength: 2,
+            filter: "startswith",
+            placeholder: "enter search value",
+            dataSource: new kendo.data.DataSource({         // initialize data source
+                transport: {                                // call controller action to fetch
+                    read: '@Url.Action("FindSearchValues", "CourseProject")',
+                    type: 'GET',
+                    dataType: 'json',
+                }
+            }),
+            change: function (e) {
+                if (this.value != "") {
+                    // CSS HIGHLIGHTING
+                }
+            }
+        });
+
+        $("#searchInput").data("kendoAutoComplete").list.width(276);
+    });
+</script>
