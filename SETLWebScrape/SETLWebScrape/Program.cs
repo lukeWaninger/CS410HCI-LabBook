@@ -119,18 +119,18 @@ namespace SETLWebScrape {
                                 name = name,
                             });
 
-                            // adding tool fields
-                            HtmlElementCollection possibleFields = item.Parent.GetElementsByTagName("li");
-                            foreach (HtmlElement field in possibleFields) {
+                            //// adding tool fields
+                            //HtmlElementCollection possibleFields = item.Parent.GetElementsByTagName("li");
+                            //foreach (HtmlElement field in possibleFields) {
 
-                            }
+                            //}
                         }
                     }
                     categoriesParsed.Add(newCat);
                 }
             }
 
-            System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads\\SETLTools.txt", JsonConvert.SerializeObject(browser.Document));
+            System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads\\SETLTools.txt", JsonConvert.SerializeObject(categoriesParsed));
         }
     }
     public class Category {
