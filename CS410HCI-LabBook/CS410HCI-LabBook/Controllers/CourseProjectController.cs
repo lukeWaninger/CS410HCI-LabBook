@@ -36,7 +36,7 @@ namespace CS410HCI_LabBook.Controllers
         // GET: Course Project/UI
         public ActionResult UI()
         {
-            return View(new MapContentViewModel());
+            return View();
         }
 
         [HttpGet]

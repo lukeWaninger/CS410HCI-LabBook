@@ -9,30 +9,59 @@
         Implement the user interface and perform usability tests that measure performance and preference criteria.
     </p>
 </div>
-<div>
-    <input style="width:280px" id="searchInput" type="text" />
+
+<button id="userInterfaceButton" type="button" class="btn btn-default" aria-label="..." onclick="openUserInterface()">User Interface</button>
+
+@(Html.Kendo().Window()
+        .Title("User Interface")
+        .Name("userInterface")
+        .Content(
+            @<text>
+<div style="background-color:white">
+    <iframe id="uiFrame" src="http://76.115.79.37:9080/"></iframe>
 </div>
+            </text>)
+         .Iframe(true)
+         .Resizable()
+         .Draggable()
+         .Visible(false)
+         .Scrollable(false)
+         .Animation(animation => {
+             animation.Open(open => {
+                 open.Zoom(ZoomDirection.In);
+                 open.Fade(FadeDirection.In);
+             });
+             animation.Close(close => {
+                 close.Zoom(ZoomDirection.Out);
+                 close.Fade(FadeDirection.Out);
+             });
+         })
+         .Actions(actions => actions.Close())
+)
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $("#searchInput").kendoAutoComplete({
-            minLength: 2,
-            filter: "startswith",
-            placeholder: "enter search value",
-            dataSource: new kendo.data.DataSource({         // initialize data source
-                transport: {                                // call controller action to fetch
-                    read: '@Url.Action("FindSearchValues", "CourseProject")',
-                    type: 'GET',
-                    dataType: 'json',
-                }
-            }),
-            change: function (e) {
-                if (this.value != "") {
-                    // CSS HIGHLIGHTING
-                }
-            }
-        });
+    function openUserInterface() {
+        var window = $("#userInterface").data("kendoWindow");
+        window.wrapper.css({
+            width: "80%",
+            maxWidth: "1005px",
+        })
+        window.open();
+        window.center();
 
-        $("#searchInput").data("kendoAutoComplete").list.width(276);
-    });
+        var uiWidth = $("#userInterface").width() - 10;
+        $("#uiFrame").width(uiWidth);
+
+        var uiHeight = uiWidth * .75;
+        $("#uiFrame").height(uiWidth);
+    }
 </script>
+
+<style>
+    #uiFrame {
+        width: auto;
+        height: auto;
+        margin-top: 5px;
+        border:none;
+    }
+</style>
