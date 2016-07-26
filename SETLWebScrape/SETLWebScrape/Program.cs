@@ -30,13 +30,13 @@ namespace SETLWebScrape {
         }
 
         public static void WebBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e) {
-            string localpath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads\\";
+            string localpath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
             WebBrowser browser = sender as WebBrowser;
             browser.DocumentCompleted -= WebBrowser_DocumentCompleted;
 
-                HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-                doc.Load(localpath + "SEPTL.html");
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            doc.Load(localpath + "\\Downloads\\SEPTL.html");
 
             HtmlNodeCollection categories = doc.DocumentNode.SelectNodes("//*[contains(@class, 'aCategory')]");
             List<Category> categoriesParsed = new List<Category>();
@@ -102,7 +102,7 @@ namespace SETLWebScrape {
                                 });
                                 existingTools.Add(name.ToUpper().Trim());
                             }
-                            
+
                         }
                         catch (Exception ex) { }
                     }
@@ -112,7 +112,7 @@ namespace SETLWebScrape {
                 existingTools.ForEach(x => Console.WriteLine(x));
                 Console.ReadKey();
 
-                System.IO.File.WriteAllText(localpath + "SETLTools.txt", JsonConvert.SerializeObject(categoriesParsed));
+                System.IO.File.WriteAllText(localpath + "\\Source\\Repos\\map\\" + "toolList.json", JsonConvert.SerializeObject(categoriesParsed));
             }
         }
     }
