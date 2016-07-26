@@ -70,35 +70,11 @@ namespace SETLWebScrape {
                                 available = 1;
                             }
 
-                            //string description, brand, model, lateFine;
-                            //try {
-                            //    description = item.ChildNodes[1].FirstChild.FirstChild.InnerText;
-                            //    description = description.Substring(description.IndexOf(":") + 1);
-
-                            //    brand = item.ChildNodes[1].FirstChild.ChildNodes[2].InnerText;
-                            //    brand = brand.Substring(brand.IndexOf(":") + 1);
-
-                            //    model = item.ChildNodes[1].FirstChild.ChildNodes[3].InnerText;
-                            //    model = model.Substring(model.IndexOf(":") + 1);
-
-                            //    lateFine = item.ChildNodes[1].FirstChild.ChildNodes[4].InnerText;
-                            //    lateFine = lateFine.Substring(lateFine.IndexOf(":") + 1);
-                            //}
-                            //catch (Exception ex) {
-                            //    description = "";
-                            //    brand = "";
-                            //    model = "";
-                            //    lateFine = "";
-                            //}
                             if (!existingTools.Contains(name.ToUpper().Trim())) {
                                 newCat.AddTool(new Tool {
                                     id = id,
                                     name = name,
-                                    available = available,
-                                    //description = description,
-                                    //brand = brand,
-                                    //lateFine = lateFine,
-                                    //model = model,
+                                    availablility = available,
                                 });
                                 existingTools.Add(name.ToUpper().Trim());
                             }
@@ -108,35 +84,31 @@ namespace SETLWebScrape {
                     }
                     categoriesParsed.Add(newCat);
                 }
-                existingTools.Sort();
-                existingTools.ForEach(x => Console.WriteLine(x));
-                Console.ReadKey();
 
-                System.IO.File.WriteAllText(localpath + "\\Source\\Repos\\map\\" + "toolList.json", JsonConvert.SerializeObject(categoriesParsed));
+
+                System.IO.File.WriteAllText(localpath + "\\Source\\Repos\\map\\" + "dataWithAvailability.json", JsonConvert.SerializeObject(categoriesParsed));
             }
         }
     }
     public class Category {
-        public string name { get; set; }
-        public List<Tool> Tools { get; set; }
+        public string sectionName { get; set; }
+        public string leftPanel { get; set; }
+        public string panelNum { get; set; }
+        public List<Tool> tools { get; set; }
 
         public Category(string name) {
-            this.name = name;
-            this.Tools = new List<Tool>();
+            this.sectionName = name;
+            this.tools = new List<Tool>();
         }
 
         public void AddTool(Tool tool) {
-            Tools.Add(tool);
+            tools.Add(tool);
         }
     }
 
     public class Tool {
         public string name { get; set; }
         public string id { get; set; }
-        public int available { get; set; }
-        //public string description { get; set; }
-        //public string brand { get; set; }
-        //public string model { get; set; }
-        //public string lateFine { get; set; }
+        public int availablility { get; set; }
     }    
 }
