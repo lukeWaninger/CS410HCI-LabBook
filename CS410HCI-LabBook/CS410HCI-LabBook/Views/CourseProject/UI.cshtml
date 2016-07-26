@@ -9,7 +9,7 @@
         Implement the user interface and perform usability tests that measure performance and preference criteria.
     </p>
 </div>
-
+<h4>Average UI Interface Load Time: @ViewBag.AverageLoadTime</h4>
 <button id="userInterfaceButton" type="button" class="btn btn-default" aria-label="..." onclick="openUserInterface()">User Interface</button>
 
 @(Html.Kendo().Window()
@@ -40,20 +40,44 @@
 )
 
 <script type="text/javascript">
+    var start;
+    var error;
+
     function openUserInterface() {
         var window = $("#userInterface").data("kendoWindow");
         window.wrapper.css({
             width: "80%",
             maxWidth: "1005px",
-        })
+        });             
+
+        start = new Date().getTime();
         window.open();
         window.center();
 
+        var uiFrame = $("#uiFrame");
         var uiWidth = $("#userInterface").width() - 10;
-        $("#uiFrame").width(uiWidth);
+        uiFrame.width(uiWidth);
 
         var uiHeight = uiWidth * .75;
-        $("#uiFrame").height(uiWidth);
+        uiFrame.height(uiWidth);
+
+        uiFrame.on('load', function () {
+            var end = new Date().getTime();
+            var timeDuration = end - start;
+            
+            $.ajax({
+                url: "/CourseProject/LogLoadTime",
+                type: "POST",
+                async: false,
+                cahce: false,
+                dataType: "text",
+                data: { duration: timeDuration },
+                success: function (data) { error = data; },
+                error: function (data) { error = data; }
+            });
+        });
+
+        uiFrame.attr('src', $("#uiFrame").attr('src')); // force reload
     }
 </script>
 

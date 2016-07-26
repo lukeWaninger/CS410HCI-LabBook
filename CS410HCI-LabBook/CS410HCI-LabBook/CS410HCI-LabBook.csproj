@@ -530,6 +530,7 @@
     <Content Include="Content\Recourse Documents\apk4.png" />
     <Content Include="Content\Recourse Documents\apk5.png" />
     <Content Include="Content\Recourse Documents\Content Control Model.jpg" />
+    <Content Include="Content\Recourse Documents\loadTimes.txt" />
     <Content Include="Content\Recourse Documents\ToolShed Layout.jpg" />
     <Content Include="Content\Recourse Documents\SETLTools.txt" />
     <Content Include="favicon.ico" />
