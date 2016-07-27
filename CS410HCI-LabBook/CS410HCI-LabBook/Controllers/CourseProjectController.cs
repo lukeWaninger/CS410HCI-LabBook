@@ -34,18 +34,30 @@ namespace CS410HCI_LabBook.Controllers
             // get average ui interface load time
             string path = AppDomain.CurrentDomain.BaseDirectory + "Content\\Recourse Documents\\loadTimes.txt";
             List<double> times = new List<double>();
-            using (StreamReader reader = new StreamReader(path)) {
-                List<string> s = reader.ReadToEnd().Split(';').ToList();
-                
-                foreach (string e in s) {
-                    double time = 0;
-                    if (double.TryParse(e, out time)) {
-                        times.Add(time);
+
+            try {
+                using (StreamReader reader = new StreamReader(path)) {
+                    List<string> s = reader.ReadToEnd().Split(';').ToList();
+
+                    foreach (string e in s) {
+                        double time = 0;
+                        if (double.TryParse(e, out time)) {
+                            times.Add(time);
+                        }
                     }
                 }
-            }
 
-            ViewBag.AverageLoadTime =  string.Format("{0:0.00} seconds", times.Average());
+                double averageLoadTime = times.Average();
+
+                ViewBag.Acceptable = averageLoadTime < 5 ? "within" : "not within";
+                ViewBag.NumberOfMapLoads = times.Count;
+                ViewBag.AverageLoadTime = string.Format("{0:0.00} seconds", averageLoadTime);
+            }
+            catch (Exception ex) {
+                ViewBag.Acceptable = "SERVER FAILED TO LOAD LOAD TIMES";
+                ViewBag.NumberOfMapLoads = "SERVER FAILED TO LOAD LOAD TIMES";
+                ViewBag.AverageLoadTime = "SERVER FAILED TO LOAD LOAD TIMES";
+            }
             return View();
         }
 
