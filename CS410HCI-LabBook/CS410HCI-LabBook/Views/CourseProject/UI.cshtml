@@ -15,8 +15,10 @@
         Testing was conducted to the same users who participated in the previous focus group. We started by explaining the
         process to be conducted and providing a follow up of the changes made to the application since our last meeting.
         For each user, we measured performance metrics by verbally giving a series of commands and recording both the time it took
-        each user to complete the command and any comments noticed during each task. Each user then completed a questionnaire
-        which gathered preference metrics as well as any opinions in the form of open-ended questions.
+        each user to complete the command and any comments noticed during each task. The tasks were performed using the touch screen
+        of a ten inch tablet. This tablet is a bit larger than the tablets used in the SEPTL library but close enough to where
+        accurate touch simulation could be performed. After completing each task, the user was given a questionnaire
+        which gathered preference metrics as well as any opinion based metrics in the form of open-ended questions.
     </p>
     <h4>Performance Metrics</h4>
     <div>
@@ -38,7 +40,7 @@
                 <h5>Time taken for map load</h5>
                 <p>
                     Requirement: 5 seconds. This metric was calculated dynamically by placing a timer in the application
-                    submitting each load time for server side storage and processing. Over @ViewBag.NumberOfMapLoads
+                    submitting each load time for server side storage and processing. With @ViewBag.NumberOfMapLoads
                     application load(s), the average time has been @ViewBag.AverageLoadTime which is @ViewBag.Acceptable our preset boundaries.
                 </p>
             </li>
@@ -167,23 +169,43 @@
         </ul>
     </div>
     <h4>Open-Ended Questions</h4>
-    <div>
+    <div>        
         <p>
-
+            The open ended questions produced a surprising amount of feedback. Some notable improvements to be made include:
+            <ul>
+                <li>
+                    Some sort of 'reset' feature needs to be incorporated into the application. This improvement was a 
+                    consensus across all users and has already been implemented.
+                </li>
+                <li>
+                    The 'help' icon in the upper right hand corner needs to be enlarged. This was also a consensus across the
+                    users as the application was experienced through a tablet using touch. This modification has already been
+                    made.
+                </li>
+            </ul>
+            Some notable positive feedback included:
+            <ul>
+                <li>Map is simple, easy to read, fast, and intuitive.</li>
+                <li>The section itemization as the search input increases characters.</li>
+                <li>The contrasting highlighting made it clear which sections had resulting tools.</li>
+            </ul>
         </p>
     </div>
 </div>
 <button id="userInterfaceButton" type="button" class="btn btn-default" aria-label="..." onclick="openUserInterface()">User Interface</button>
+<button id="taskSheetButton" type="button" class="btn btn-default" aria-label="..." onclick="openTaskSheet()">Task Sheets</button>
+<button id="questionaireButton" type="button" class="btn btn-default" aria-label="..." onclick="openQuestionaire()">Questionnaires</button>
 
-@(Html.Kendo().Window()
+<div id="uiContainer">
+    @(Html.Kendo().Window()
         .Title("User Interface")
         .Name("userInterface")
         .Content(
-            @<text>
-<div style="background-color:white">
-    <iframe id="uiFrame" src="http://76.115.79.37:9080/"></iframe>
-</div>
-            </text>)
+    @<text>
+        <div style="background-color:white">
+            <iframe id="uiFrame" src="http://76.115.79.37:9080/"></iframe>
+        </div>
+    </text>)
          .Iframe(true)
          .Resizable()
          .Draggable()
@@ -200,7 +222,63 @@
              });
          })
          .Actions(actions => actions.Close())
-)
+         .Events(events => events.Resize("resizeUiFrame"))
+    )
+</div>
+<div id="taskSheetWindowContainer">
+    @(Html.Kendo().Window()
+        .Title("Task Sheets")
+        .Name("taskSheetWindow")
+        .Content(
+    @<text>
+        <iframe id="taskSheetFrame" src="https://drive.google.com/file/d/0BwLS0q_z3G1SMmM4c1RUX2hPNk0/preview"></iframe>
+    </text>)
+         .Iframe(true)
+         .Resizable()
+         .Draggable()
+         .Visible(false)
+         .Scrollable(false)
+         .Animation(animation => {
+             animation.Open(open => {
+                 open.Zoom(ZoomDirection.In);
+                 open.Fade(FadeDirection.In);
+             });
+             animation.Close(close => {
+                 close.Zoom(ZoomDirection.Out);
+                 close.Fade(FadeDirection.Out);
+             });
+         })
+         .Actions(actions => actions.Close())
+         .Events(events => events.Resize("resizeTaskSheetFrame"))
+    )
+</div>
+<div id="questionnaireWindowContainer">
+    @(Html.Kendo().Window()
+        .Title("Questionnaires")
+        .Name("questionnairesWindow")
+        .Content(
+    @<text>
+        <iframe id="questionnaireFrame" src="https://drive.google.com/file/d/0BwLS0q_z3G1SSkdoaWV3VmFFT1k/preview"></iframe>
+    </text>)
+         .Iframe(true)
+         .Draggable()
+         .Resizable()
+         .Visible(false)
+         .Scrollable(false)
+         .Animation(animation => {
+             animation.Open(open => {
+                 open.Zoom(ZoomDirection.In);
+                 open.Fade(FadeDirection.In);
+             });
+             animation.Close(close => {
+                 close.Zoom(ZoomDirection.Out);
+                 close.Fade(FadeDirection.Out);
+             });
+         })
+         .Actions(actions => actions.Close())
+         .Events(events => events.Resize("resizeQuestionnaireFrame"))
+    )
+</div>
 
 <script type="text/javascript">
     var start;
@@ -209,21 +287,16 @@
     function openUserInterface() {
         var window = $("#userInterface").data("kendoWindow");
         window.wrapper.css({
-            width: "80%",
+            width: "90%",
             maxWidth: "1005px",
             position: "absolute",
-            top: "50px"
+            top: "60px"
         });             
 
         start = new Date().getTime();
+        $(window).scrollTop();
         window.open();
-
-        var uiFrame = $("#uiFrame");
-        var uiWidth = $("#userInterface").width() - 10;
-        uiFrame.width(uiWidth);
-
-        var uiHeight = uiWidth * .75;
-        uiFrame.height(uiWidth);
+        resizeUiFrame();
 
         uiFrame.on('load', function () {
             var end = new Date().getTime();
@@ -242,6 +315,55 @@
         });
 
         uiFrame.attr('src', $("#uiFrame").attr('src')); // force reload
+    }
+
+    function resizeUiFrame() {
+        var uiFrame = $("#uiFrame");
+        var uiWidth = $("#userInterface").width() - 10;
+        uiFrame.width(uiWidth);
+
+        var uiHeight = uiWidth * .75;
+        uiFrame.height(uiWidth);
+    }
+
+    function openQuestionaire() {
+        var window = $("#questionnairesWindow").data("kendoWindow");
+        window.wrapper.css({
+            width: "80%",
+            maxWidth: "1005px",
+            height: "80%",
+        })
+        window.open();
+        window.center();
+        resizeQuestionnaireFrame();
+    }
+
+    function resizeQuestionnaireFrame() {
+        var docWidth = $("#questionnairesWindow").width() - 15;
+        $("#questionnaireFrame").width(docWidth);
+
+        var docHeight = $("#questionnairesWindow").height() - 15;
+        $("#questionnaireFrame").height(docHeight);
+    }
+
+    function openTaskSheet() {
+        var window = $("#taskSheetWindow").data("kendoWindow");
+        window.wrapper.css({
+            width: "80%",
+            maxWidth: "1005px",
+            height: "80%",
+        })
+        window.open();
+        window.center();
+        resizeTaskSheetFrame();
+    }
+
+    function resizeTaskSheetFrame() {
+        var docWidth = $("#taskSheetWindow").width() - 15;
+        $("#taskSheetFrame").width(docWidth);
+
+        var docHeight = $("#taskSheetWindow").height() - 15;
+        $("#taskSheetFrame").height(docHeight);
     }
 </script>
 
