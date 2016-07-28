@@ -556,7 +556,6 @@
     <Content Include="Content\kendo\2015.1.429\images\kendoui.ttf" />
     <Content Include="Content\kendo\2015.1.429\images\kendoui.woff" />
     <None Include="Properties\PublishProfiles\CS410HCI-LabBook - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\CS410HCI-LabBook.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

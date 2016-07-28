@@ -9,6 +9,8 @@ using System.IO;
 namespace CS410HCI_LabBook.Controllers
 {
     public class CourseProjectController : Controller {
+        private string loadTimeFilePath = AppDomain.CurrentDomain.BaseDirectory + "Content\\Recourse Documents\\loadTimes.txt";
+
         // GET: CourseProject/Ethnography
         public ActionResult Ethnography() {
             return View();
@@ -32,11 +34,10 @@ namespace CS410HCI_LabBook.Controllers
         // GET: Course Project/UI
         public ActionResult UI() {
             // get average ui interface load time
-            string path = AppDomain.CurrentDomain.BaseDirectory + "Content\\Recourse Documents\\loadTimes.txt";
             List<double> times = new List<double>();
 
             try {
-                using (StreamReader reader = new StreamReader(path)) {
+                using (StreamReader reader = new StreamReader(loadTimeFilePath)) {
                     List<string> s = reader.ReadToEnd().Split(';').ToList();
 
                     foreach (string e in s) {
@@ -54,42 +55,19 @@ namespace CS410HCI_LabBook.Controllers
                 ViewBag.AverageLoadTime = string.Format("{0:0.00} seconds", averageLoadTime);
             }
             catch (Exception ex) {
-                ViewBag.Acceptable = "SERVER FAILED TO LOAD LOAD TIMES";
-                ViewBag.NumberOfMapLoads = "SERVER FAILED TO LOAD LOAD TIMES";
-                ViewBag.AverageLoadTime = "SERVER FAILED TO LOAD LOAD TIMES";
+                ViewBag.Acceptable = "SERVER FAILED TO LOAD TIMES";
+                ViewBag.NumberOfMapLoads = "SERVER FAILED TO LOAD TIMES";
+                ViewBag.AverageLoadTime = "SERVER FAILED TO LOAD TIMES";
             }
             return View();
-        }
-
-        [HttpGet]
-        public ActionResult FindSearchValues(string searchInput = "") {
-            MapContentViewModel vm = new MapContentViewModel();
-
-            List<string> allTools = new List<string>();
-            foreach (Section s in vm.Sections) {
-                foreach (Tool t in s.ToolList) {
-                    if (!String.IsNullOrEmpty(searchInput)) {
-                        if (t.Name.StartsWith(searchInput)) {
-                            allTools.Add(t.Name);
-                        }
-                    }
-                    else allTools.Add(t.Name);
-                }
-                s.ToolList.ForEach(t => allTools.Add(t.Name));
-            }
-            allTools = allTools.Distinct().ToList();
-            allTools.OrderBy(t => t);
-
-            return Json(allTools, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public ActionResult LogLoadTime(string duration) {
             if (string.IsNullOrEmpty(duration)) return Json("failing", JsonRequestBehavior.AllowGet);
 
-            string path = AppDomain.CurrentDomain.BaseDirectory + "Content\\Recourse Documents\\loadTimes.txt";
             try {
-                using (StreamWriter writer = new StreamWriter(path, true)) {
+                using (StreamWriter writer = new StreamWriter(loadTimeFilePath, true)) {
                     double seconds = 0;
                     if (double.TryParse(duration, out seconds)) {
                         writer.Write(seconds / 1000 + ";");

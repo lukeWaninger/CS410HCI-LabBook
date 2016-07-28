@@ -296,6 +296,8 @@
         start = new Date().getTime();
         $(window).scrollTop();
         window.open();
+
+        var uiFrame = $("#uiFrame");
         resizeUiFrame();
 
         uiFrame.on('load', function () {
