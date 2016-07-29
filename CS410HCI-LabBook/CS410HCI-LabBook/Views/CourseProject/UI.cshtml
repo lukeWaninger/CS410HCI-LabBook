@@ -1,5 +1,4 @@
-﻿@model  CS410HCI_LabBook.ViewModels.MapContentViewModel
-@{
+﻿@{
     ViewBag.Title = "User Interface";
 }
 
@@ -20,176 +19,184 @@
         accurate touch simulation could be performed. After completing each task, the user was given a questionnaire
         which gathered preference metrics as well as any opinion based metrics in the form of open-ended questions.
     </p>
-    <h4>Performance Metrics</h4>
-    <div>
-        <p>
-            Several of the previously created performance metrics were considered obsolete after the focus group and feature changes
-            made. The main feature generating performance metrics was the ability of SEPTL volunteers to update the map. This feature
-            was remove as we were not given direct access to the existing SEPTL database and creating this feature was not feasible
-            for the time constraints of the class. Removing this feature removed the following performance metrics.
-            <ul>
-                <li>Time it takes for a volunteer to update the map with a new section (1 hour)</li>
-                <li>Time it takes for a volunteer to update the search with a new section (15 minutes)</li>
-                <li>Time it takes for a volunteer to draw a new map and integrate it with the software (2 hours)</li>
-                <li>Time it takes for a volunteer to add synonyms for some tool type to the search (15 minutes)</li>
-            </ul>
-            Performance metrics gathered in this usability session are discussed individually below.
-        </p>
-        <ul class="usabiltySuccess usabiltiyMetric">
-            <li>
-                <h5>Time taken for map load</h5>
+    <div id="metricsGroups" class="list-group">
+        <div class="metricGroup list-group-item">
+            <h4>Performance Metrics</h4>
+            <div>
                 <p>
-                    Requirement: 5 seconds. This metric was calculated dynamically by placing a timer in the application
-                    submitting each load time for server side storage and processing. With @ViewBag.NumberOfMapLoads
-                    application load(s), the average time has been @ViewBag.AverageLoadTime which is @ViewBag.Acceptable our preset boundaries.
+                    Several of the previously created performance metrics were considered obsolete after the focus group and feature changes
+                    made. The main feature generating performance metrics was the ability of SEPTL volunteers to update the map. This feature
+                    was remove as we were not given direct access to the existing SEPTL database and creating this feature was not feasible
+                    for the time constraints of the class. Removing this feature removed the following performance metrics.
+                    <ul>
+                        <li>Time it takes for a volunteer to update the map with a new section (1 hour)</li>
+                        <li>Time it takes for a volunteer to update the search with a new section (15 minutes)</li>
+                        <li>Time it takes for a volunteer to draw a new map and integrate it with the software (2 hours)</li>
+                        <li>Time it takes for a volunteer to add synonyms for some tool type to the search (15 minutes)</li>
+                    </ul>
+                    Performance metrics gathered in this usability session are discussed individually below.
                 </p>
-            </li>
-            <li>
-                <h5>Time taken for a user to find a tool location</h5>
+                <ul class="usabiltySuccess usabiltiyMetric">
+                    <li>
+                        <h5>Time taken for map load</h5>
+                        <p>
+                            Requirement: 5 seconds. This metric was calculated dynamically by placing a timer in the application
+                            submitting each load time for server side storage and processing. With @ViewBag.NumberOfMapLoads
+                            application load(s), the average time has been @ViewBag.AverageLoadTime which is @ViewBag.Acceptable our preset boundaries.
+                        </p>
+                    </li>
+                    <li>
+                        <h5>Time taken for a user to find a tool location</h5>
+                        <p>
+                            Requirement: 2 minutes. Task number 9 required users to search for an item using the search input text box and note
+                            the section in which it resides. The average time taken for all users was 11.4 seconds.
+                        </p>
+                    </li>
+                    <li>
+                        <h5>Time taken for a user to find a section on the map</h5>
+                        <p>
+                            Requirement: 30 seconds. This metric was calculated using task 3. The task required a user to find a
+                            specific section on the map and verbally respond when they had found the required section. The average
+                            time taken for all users to complete the task was 2.9 seconds.
+                        </p>
+                    </li>
+                    <li>
+                        <h5>Time required for type-ahead to respond</h5>
+                        <p>
+                            Requirement: 1 second. All the JSON data supporting the search tools auto-complete feature was hashed and loaded
+                            directly into the browser on page load. This allowed the feature to function without any server side requests
+                            to process the type feature resulting in nearly instant response times.
+                        </p>
+                    </li>
+                    <li>
+                        <h5>Time taken for a user to find the help icon</h5>
+                        <p>
+                            Requirement: 8 seconds. This metric was calculated using task 5 which required the user to find the help icon
+                            and load the modal. The average time taken was 5.82 seconds.
+                        </p>
+                    </li>
+                    <li>
+                        <h5>Time taken for the help content to load once clicked</h5>
+                        <p>
+                            Requirement: 2 seconds. This feature was implemented using embedded browser scripts and resulted in nearly
+                            instant response times.
+                        </p>
+                    </li>
+                    <li>
+                        <h5>Time taken to determine store hours or the remaining time open</h5>
+                        <p>
+                            Requirement 8 seconds: This metric was gathered using task 6. The task asked the user to find and report the
+                            store hours. The question was incorrectly given to one user resulting in an outlying data point. The average
+                            time for users who were correctly given the task was 1.95 seconds.
+                        </p>
+                    </li>
+                </ul>
+                <ul class="usabilityFail usabiltiyMetric">
+                    <li>
+                        <h5>Time taken to find a listing of tools in a specific map section</h5>
+                        <p>
+                            Requirement: 8 seconds. This metric was gathered using task 7 and 8 which asked the user to find a listing
+                            of the store's available drill bits. It required a user to find the section, click the section, and report
+                            that the modal had been opened displaying the correct information. The average time to complete the task
+                            was 8.5 seconds.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="metricGroup list-group-item">
+            <h4>Preference Metrics</h4>
+            <div>
                 <p>
-                    Requirement: 2 minutes. Task number 9 required users to search for an item using the search input text box and note
-                    the section in which it resides. The average time taken for all users was 11.4 seconds.
+                    The questionnaire contained 6 yes/no and 2 Likert scale questions to match the requirements set forth. Each are explained in detail below.
                 </p>
-            </li>
-            <li>
-                <h5>Time taken for a user to find a section on the map</h5>
+                <ul class="usabiltiyMetric usabiltySuccess">
+                    <li>
+                        <h5>Would you recommend this to a friend?</h5>
+                        <p>
+                            Requirement: 75%. One user did respond to the question. Of the users that did, 100% responded yes.
+                        </p>
+                    </li>
+                    <li>
+                        <h5>Was this helpful to you for locating your tool?</h5>
+                        <p>
+                            Requirement: 75%. Achieved: 100%.
+                        </p>
+                    </li>
+                    <li>
+                        <h5>Could you read all of the section names on the map?</h5>
+                        <p>
+                            Requirement: 90%. Achieved: 100%.
+                        </p>
+                    </li>
+                </ul>
+                <ul class="usabiltiyMetric usabilityFail">
+                    <li>
+                        <h5>Did the map accurately and intuitively reflect the library layout?</h5>
+                        <p>
+                            Requirement: 90%. Achieved: 66%. One user responded with no and asked for the inclusion
+                            of cardinal direction indicators.
+                        </p>
+                    </li>
+                </ul>
+                <ul class="usabiltiyMetric usabiltySuccess">
+                    <li>
+                        <h5>Did you find the tool you were looking for in the section the search returned?</h5>
+                        <p>
+                            Requirement: 70%. Achieved: 100% of those that responded.
+                        </p>
+                    </li>
+                    <li>
+                        <h5>Did the map sections remind you of other tools you needed to check out?</h5>
+                        <p>
+                            Requirement: 10%. Achieved: 100% of those that responded.
+                        </p>
+                    </li>
+                </ul>
+                <ul class="usabiltiyMetric usabilityFail">
+                    <li>
+                        <h5>How user friendly was the search tool? </h5>
+                        <p>
+                            Requirement: Likert scale 1-10, at least avg of 8. Achieved: 7.7 with user notation
+                            that the help icon was too small and asked if the question mark is a universal standard.
+                        </p>
+                    </li>
+                </ul>
+                <ul class="usabiltiyMetric usabiltySuccess">
+                    <li>
+                        <h5>How helpful as the map to you?</h5>
+                        <p>
+                            Requirement: Likert scale 1-10, at least avg of 7. Achieved 8.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="metricGroup list-group-item">
+            <h4>Open-Ended Questions</h4>
+            <div>
                 <p>
-                    Requirement: 30 seconds. This metric was calculated using task 3. The task required a user to find a
-                    specific section on the map and verbally respond when they had found the required section. The average
-                    time taken for all users to complete the task was 2.9 seconds.
+                    The open ended questions produced a surprising amount of feedback. Some notable improvements to be made include:
+                    <ul>
+                        <li>
+                            Some sort of 'reset' feature needs to be incorporated into the application. This improvement was a
+                            consensus across all users and has already been implemented.
+                        </li>
+                        <li>
+                            The 'help' icon in the upper right hand corner needs to be enlarged. This was also a consensus across the
+                            users as the application was experienced through a tablet using touch. This modification has already been
+                            made.
+                        </li>
+                    </ul>
+                    Some notable positive feedback included:
+                    <ul>
+                        <li>Map is simple, easy to read, fast, and intuitive.</li>
+                        <li>The section itemization as the search input increases characters.</li>
+                        <li>The contrasting highlighting made it clear which sections had resulting tools.</li>
+                    </ul>
                 </p>
-            </li>
-            <li>
-                <h5>Time required for type-ahead to respond</h5>
-                <p>
-                    Requirement: 1 second. All the JSON data supporting the search tools auto-complete feature was hashed and loaded
-                    directly into the browser on page load. This allowed the feature to function without any server side requests
-                    to process the type feature resulting in nearly instant response times.
-                </p>
-            </li>
-            <li>
-                <h5>Time taken for a user to find the help icon</h5>
-                <p>
-                    Requirement: 8 seconds. This metric was calculated using task 5 which required the user to find the help icon
-                    and load the modal. The average time taken was 5.82 seconds.
-                </p>
-            </li>
-            <li>
-                <h5>Time taken for the help content to load once clicked</h5>
-                <p>
-                    Requirement: 2 seconds. This feature was implemented using embedded browser scripts and resulted in nearly
-                    instant response times.
-                </p>
-            </li>
-            <li>
-                <h5>Time taken to determine store hours or the remaining time open</h5>
-                <p>
-                    Requirement 8 seconds: This metric was gathered using task 6. The task asked the user to find and report the
-                    store hours. The question was incorrectly given to one user resulting in an outlying data point. The average
-                    time for users who were correctly given the task was 1.95 seconds.
-                </p>
-            </li>
-        </ul>
-        <ul class="usabilityFail usabiltiyMetric">
-            <li>
-                <h5>Time taken to find a listing of tools in a specific map section</h5>
-                <p>
-                    Requirement: 8 seconds. This metric was gathered using task 7 and 8 which asked the user to find a listing
-                    of the store's available drill bits. It required a user to find the section, click the section, and report
-                    that the modal had been opened displaying the correct information. The average time to complete the task
-                    was 8.5 seconds.
-                </p>
-            </li>
-        </ul>
-    </div>
-    <h4>Preference Metrics</h4>
-    <div>
-        <p>
-            The questionnaire contained 6 yes/no and 2 Likert scale questions to match the requirements set forth. Each are explained in detail below.
-        </p>
-        <ul class="usabiltiyMetric usabiltySuccess">
-            <li>
-                <h5>Would you recommend this to a friend?</h5>
-                <p>
-                    Requirement: 75%. One user did respond to the question. Of the users that did, 100% responded yes.
-                </p>
-            </li>
-            <li>
-                <h5>Was this helpful to you for locating your tool?</h5>
-                <p>
-                    Requirement: 75%. Achieved: 100%.
-                </p>
-            </li>
-            <li>
-                <h5>Could you read all of the section names on the map?</h5>
-                <p>
-                    Requirement: 90%. Achieved: 100%.
-                </p>
-            </li>
-        </ul>
-        <ul class="usabiltiyMetric usabilityFail">
-            <li>
-                <h5>Did the map accurately and intuitively reflect the library layout?</h5>
-                <p>
-                    Requirement: 90%. Achieved: 66%. One user responded with no and asked for the inclusion
-                    of cardinal direction indicators.
-                </p>
-            </li>
-        </ul>
-        <ul class="usabiltiyMetric usabiltySuccess">
-            <li>
-                <h5>Did you find the tool you were looking for in the section the search returned?</h5>
-                <p>
-                    Requirement: 70%. Achieved: 100% of those that responded.
-                </p>
-            </li>
-            <li>
-                <h5>Did the map sections remind you of other tools you needed to check out?</h5>
-                <p>
-                    Requirement: 10%. Achieved: 100% of those that responded.
-                </p>
-            </li>
-        </ul>
-        <ul class="usabiltiyMetric usabilityFail">
-            <li>
-                <h5>How user friendly was the search tool? </h5>
-                <p>
-                    Requirement: Likert scale 1-10, at least avg of 8. Achieved: 7.7 with user notation
-                    that the help icon was too small and asked if the question mark is a universal standard.
-                </p>
-            </li>
-        </ul>
-        <ul class="usabiltiyMetric usabiltySuccess">
-            <li>
-                <h5>How helpful as the map to you?</h5>
-                <p>
-                    Requirement: Likert scale 1-10, at least avg of 7. Achieved 8.
-                </p>
-            </li>
-        </ul>
-    </div>
-    <h4>Open-Ended Questions</h4>
-    <div>        
-        <p>
-            The open ended questions produced a surprising amount of feedback. Some notable improvements to be made include:
-            <ul>
-                <li>
-                    Some sort of 'reset' feature needs to be incorporated into the application. This improvement was a 
-                    consensus across all users and has already been implemented.
-                </li>
-                <li>
-                    The 'help' icon in the upper right hand corner needs to be enlarged. This was also a consensus across the
-                    users as the application was experienced through a tablet using touch. This modification has already been
-                    made.
-                </li>
-            </ul>
-            Some notable positive feedback included:
-            <ul>
-                <li>Map is simple, easy to read, fast, and intuitive.</li>
-                <li>The section itemization as the search input increases characters.</li>
-                <li>The contrasting highlighting made it clear which sections had resulting tools.</li>
-            </ul>
-        </p>
+            </div>
+        </div>
     </div>
 </div>
 <button id="userInterfaceButton" type="button" class="btn btn-default" aria-label="..." onclick="openUserInterface()">User Interface</button>
@@ -280,7 +287,20 @@
     )
 </div>
 
+
+<script src="~/Scripts/jquery-uiNEW.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+
+
 <script type="text/javascript">
+    $(document).ready(function () {
+        $(".metricGroup").accordion({
+            collapsible: true,
+            active: false,
+            heightStyle: "content"
+        });
+    })
+
     var start;
     var error;
 

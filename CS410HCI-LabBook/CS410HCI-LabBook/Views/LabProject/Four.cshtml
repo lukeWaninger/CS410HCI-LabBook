@@ -3,5 +3,1336 @@
 }
 
 <div class="jumbotron">
-    <h3>Lab Project 4b -  Multiuser application.</h3>
+    <h3>Lab Project 4b -  Multiuser Application Guidelines</h3>
 </div>
+
+<div id="guidelines" class="list-group">
+    <h4>Guidelines</h4>
+    <p>
+        Several guidelines specific to multiuser applications are outlined below and contained in their
+        respective categories. Along with the description, each guideline contains a respective
+        Relative Importance, Strength of Evidence, comments, and references used to source the Strength of
+        Evidence variable. Not all guidelines apply to all types of applications and so we created a set of 
+        guidelines unique to the application's use cases.
+    </p>
+
+    <div id="communicationsApplications" class="guideline list-group-item">
+        <h4 class="title">Communications Applications</h4>
+        <div>
+            <div class="titleBar subGuideline">
+                <h4>
+                    <strong>
+                        Guideline
+                        <span class="badge">Strength of Evidence [1-5]</span>
+                        <span class="badge">Relative Importance [1-5]</span>
+                    </strong>
+                </h4>
+            </div>
+
+            <div id="americanSignLanguage" class="subGuideline">
+                <h4>
+                    <strong>
+                        American Sign Language (ASL) Intelligibility
+                        <span class="badge badge-4">4</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Use a video encoding format that supports American Sign Language (ASL) intelligibility.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Capturing and sending ASL so that it is intelligible is a difficult engineering task.
+                        Be sure to investigate which video encoding and transmission technologies can best
+                        help you support transferring intelligible ASL through your software.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="http://dl.acm.org/citation.cfm?id=2522017">
+                                    A computational model of the intelligibility of american sign language video and video coding applications
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="https://www.imsglobal.org/accessibility/accessiblevers/sec7.html">
+                                    IMS Guidelines for Developing Accessible Learning Applications
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="http://www.ncbi.nlm.nih.gov/pubmed/18416521">
+                                    MobileASL: intelligibility of sign language video over mobile phones
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="contactSharing" class="subGuideline">
+                <h4>
+                    <strong>
+                        Contact Sharing
+                        <span class="badge badge-4">4</span>
+                        <span class="badge badge-2">2</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Allow users to quickly and easily share contacts with one-another.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        As evidenced by the quick popularity of the Bump application, users
+                        desire a way to quickly and easily share contact information.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="https://en.wikipedia.org/wiki/Bump_(application)">
+                                    Bump (application)
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="helpContent" class="subGuideline">
+                <h4>
+                    <strong>
+                        Help Content
+                        <span class="badge badge-1">1 </span>
+                        <span class="badge badge-5">5 </span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Ensure help content is easily accessible
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        It is important for users to easily and quickly access
+                        help content in case they are having trouble navigating your software.
+                    </p>
+                </div>
+            </div>
+
+            <div id="keyboardFunctionality" class="subGuideline">
+                <h4>
+                    <strong>
+                        Keyboard Functionality
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-4">4</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Options should be reachable by keyboard only. elected options should be
+                        indicated with some form of highlighting of sufficient contract to indicate an option is active.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        For accessibility reasons, all options should be reachable by keyboard as well as mouse.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="https://www.w3.org/WAI/intro/wcag">
+                            Web Content Accessibility Guidelines (WCAG) Overview
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="mamo" class="subGuideline">
+                <h4>
+                    <strong>
+                        Massive Multi User Conferences
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Allow users to create group video conversations, not just one-to-one conversations.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Remote video group conversations can greatly reduce time wasted in long face-to-face
+                        meetings. For non-corporate users, group chats are popular ways for remote groups of
+                        friends to keep in touch.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="https://hbr.org/2014/04/how-a-weekly-meeting-took-up-300000-hours-a-year/">
+                                    This Weekly Meeting Took Up 300,000 Hours a Year
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="http://www.statista.com/statistics/193721/us-internet-users-who-have-participated-in-video-calls-or-chats-by-age-group/">
+                                    Share of cell phone owners in the United States who have used video chat or video call services as of July 2015, by age group
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="messaging" class="subGuideline">
+                <h4>
+                    <strong>
+                        Messaging
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Provide a text chat application so that users can
+                        communicate via text as well as video to share documents, photos, links, etc.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        A study found that a certain company consumes over 300,000 total employee
+                        hours per year in meetings to prepare for a larger meeting. Using video chats
+                        with text-chat and document sharing support can greatly cut down on long meetings.
+                        Text chat is also a ubiquitous feature in collaborative applications, so most
+                        users expect to have it because they are accustomed to having it available.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="https://hbr.org/2014/04/how-a-weekly-meeting-took-up-300000-hours-a-year/">
+                                    Harvard Business Review
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="http://www.statista.com/statistics/258749/most-popular-global-mobile-messenger-apps/">
+                                    The Statistics Portal
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="potsDialIn" class="subGuideline">
+                <h4>
+                    <strong>
+                        Plain Old Telephone (POT)s Dial In
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-1">1</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Users should be able to call into a meeting with just a plain old telephone.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        It is a nice feature for users to be able to call into a video meeting.
+                        Furthermore, users may need to participate in corporate conferences who do
+                        not have a data connection. This guideline provides a necessary level of redundancy.
+                    </p>
+                </div>
+            </div>
+
+            <div id="screenSharing" class="subGuideline">
+                <h4>
+                    <strong>
+                        Screen Sharing
+                        <span class="badge badge-4">4</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Allow users to share their screens.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        For corporate environments, this is a must-have for sales demos and support.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="https://techcrunch.com/2010/05/15/skype-screen-sharing">
+                                    Skype Screen Sharing Is A Huge (And Free) Productivity Tool
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="https://en.wikipedia.org/wiki/Web_conferencing">
+                                    Web Conferencing
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="userBlocking" class="subGuideline">
+                <h4>
+                    <strong>
+                        User Blocking
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Users should be able to block contacts from reaching them.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Research shows that 40% of web users have experienced online harassment. Of those who have
+                        been harassed, 8% have been physically threatened, 8% have been stalked, 22% have been specifically
+                        targeted for embarassment, and 27% have been subjected to offensive name-calling. It is important
+                        to protect users from online harassment. Giving users the ability to block other users facilitates
+                        a safe environment for them.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="http://jiv.sagepub.com/content/19/4/468.short">
+                                    A Survey of Online Harassment at a University Campus
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="http://www.pewinternet.org/2014/10/22/online-harassment/">
+                                    Online Harassment
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="transcripting" class="subGuideline">
+                <h4>
+                    <strong>
+                        Real Time Text Transcripting
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Users should be able to access a real-time text transcript of the conversation.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        This is an important feature for international or large-venue applications. However, it
+                        is only helpful in international applications if the text is also translated to a given language.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="https://www.imsglobal.org/accessibility/accessiblevers/sec7.html">
+                                    IMS Guidelines for Developing Accessible Learning Applications
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="translation" class="subGuideline">
+                <h4>
+                    <strong>
+                        Translation
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Provide a translation service for users to communitcate across different languages.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        The vast majority of consumers prefer advertisements, product information,
+                        sales pitches, and virtually any form of communication in their own language.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="http://www.commonsenseadvisory.com/portals/_default/knowledgebase/articleimages/060926_r_global_consumer_preview.pdf">
+                                    Can’t Read, Won’t Buy: Why Language Matters on Global Websites
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="https://hbr.org/2012/08/speak-to-global-customers-in-t.html">
+                                    Speak to Global Customers in Their Own Language
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="viewConferenceAttendees" class="subGuideline">
+                <h4>
+                    <strong>
+                        View Conference Attendees
+                        <span class="badge badge-2">2</span>
+                        <span class="badge badge-1">1</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Provide users with a way to view contacts that are online and
+                        connected to the conference.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        This guideline is intended for corporate level conferences. Managers need to know
+                        which organization members are connected to the conference.
+                    </p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="documentEditors" class="guideline list-group-item">
+        <h4 class="title">Document Editors</h4>
+        <div>
+            <div class="titleBar subGuideline">
+                <h4>
+                    <strong>
+                        Guideline
+                        <span class="badge">Strength of Evidence [1-5]</span>
+                        <span class="badge">Relative Importance [1-5]</span>
+                    </strong>
+                </h4>
+            </div>
+
+            <div id="alertSpecification" class="subGuideline">
+                <h4>
+                    <strong>
+                        Alert Specification
+                        <span class="badge badge-2">2</span>
+                        <span class="badge badge-1">1</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Collaborators should be able to specify the level of alerts they get regarding the document. Such as:
+                        <ol>
+                            <li>A comment has been added to the document</li>
+                            <li>The document has been deleted or renamed</li>
+                            <li>Batch alerts about edits (eg, daily digest indicating X edits were made that day)</li>
+                        </ol>
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        It is nice for users to be able to opt-in to notifications.
+                    </p>
+                </div>
+            </div>
+
+            <div id="audioAlerting" class="subGuideline">
+                <h4>
+                    <strong>
+                        Audio Alerting
+                        <span class="badge badge-1">1</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Avoid using audio for alerts or indications to users.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://people.cs.vt.edu/mccricks/papers/SWM03.pdf">
+                            Somervell, J., Wahid, S., and McCrickard, D. S. Usability heuristics for large screen information exhibits. In Proc. Interact’03, IOS Press (2003), 904–907.
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="commonArea" class="subGuideline">
+                <h4>
+                    <strong>
+                        Common Area
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-1">1</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Designate one easily reachable area to all collaboration / sharing configurations.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        It is important for a collaborative software to make it easy to collaborate with others.
+                    </p>
+                </div>
+            </div>
+
+            <div id="communicationLanguages" class="subGuideline">
+                <h4>
+                    <strong>
+                        Communication Language
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-4">4</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Support collaboration across multiple languages
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        For international teams, it is very important to have this feature, but if
+                        your team all speaks the same language then of course this feature is not as important.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="documentVersioning" class="subGuideline">
+                <h4>
+                    <strong>
+                        Document Versioning
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-4">4</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Document owners should be able to revert the document to a previous version.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        For larger projects, it is important to be able to revert to previous versions of a document.
+                    </p>
+                </div>
+            </div>
+
+            <div id="embededCommunication" class="subGuideline">
+                <h4>
+                    <strong>
+                        Embedded Communication
+                        <span class="badge badge-4">4</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Offer chat within the document so that collaborators can discuss edits, etc.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Users are more productive when they can communicate about their work.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="environmentSeparation" class="subGuideline">
+                <h4>
+                    <strong>
+                        Environment Separation
+                        <span class="badge badge-2">2</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Allow users to separate personal / non-shared documents from shared / collaborative ones.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Users tend to organize their work into personal and professional categories.
+                        Try to give them this intuitive choice in your collaborative software as well.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="https://hci.stanford.edu/publications/2003/tabletopguidelines/tabletopguidelines.pdf">
+                            System Guidelines for Co-located, Collaborative Work on a Tabletop Display
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="fileFormats" class="subGuideline">
+                <h4>
+                    <strong>
+                        File Formats
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Support multiple file formats
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        It is vital for users to be able to share their documents across many formats as
+                        teams might use different OSes, reside in different countries that use different
+                        popular file formats, etc.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="individualUserViews" class="subGuideline">
+                <h4>
+                    <strong>
+                        Individual User Views
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Users should be able to control their own view, such that when another user
+                        switches views, it does not affect other users.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Users will quickly become frustrated with a collaborative environment that
+                        changes drastically without their input.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="https://www.researchgate.net/publication/277503101_Multi-User_Usability_Guidelines_for_Interactive_Wall_Display_Applications">
+                            Multi-User Usability Guidelines for Interactive Wall Display Applications
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="keyboardFunctionality" class="subGuideline">
+                <h4>
+                    <strong>
+                        Keyboard Functionality
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-4">4</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Options should be reachable by keyboard only. elected options should be
+                        indicated with some form of highlighting of sufficient contract to indicate an option is active.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        For accessibility reasons, all options should be reachable by keyboard as well as mouse.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="https://www.w3.org/WAI/intro/wcag">
+                            Web Content Accessibility Guidelines (WCAG) Overview
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="lastEditWins" class="subGuideline">
+                <h4>
+                    <strong>
+                        Last Edit Wins
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Use last-edit wins to resolve simultaneous edit conflicts.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        With simultaneous editing, simply let the last edit win and users can sort out conflicts
+                        themselves by using versioning, chat, and permissions features. Last-edit itself can be
+                        misleading when considering the technical aspects of simultaneous editing. For example, if
+                        user 1 and user 2 are editing document "abc" and user 1 adds "x" to position 0 of "abc" and user
+                        2 deletes the "c" from abc (ie, deletes position 2 in a 0-based position system), then we'd
+                        expect the result to be "xab". But if we simply send edits without transforming them based on
+                        other edits, we'd get the unexpected "xac". Transforming simultaneous edits based on other edits
+                        is called Operational Transformation and is recommended here.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="http://blog.gainlo.co/index.php/2016/03/22/system-design-interview-question-how-to-design-google-docs/">
+                                    How To Design Google Docs
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="https://en.wikipedia.org/wiki/Operational_transformation">
+                                    Operational Transformation
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="permissionsMaintenance" class="subGuideline">
+                <h4>
+                    <strong>
+                        Permissions Maintenance
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-1">1</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Navigating to the form to add collaborators should only take one to two clicks.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        It is important for a collaborative software to make it easy to collaborate with others.
+                    </p>
+                </div>
+            </div>
+
+            <div id="permissionLevels" class="subGuideline">
+                <h4>
+                    <strong>
+                        Permission Levels
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        A document owner should be able to set various permissions on individual collaborators. Permissions include:
+                        <ol>
+                            <li>Grant/deny editing</li>
+                            <li>Grant/deny the collaborator from adding other collaborators</li>
+                            <li>Grant/deny the collaborator from printing/downloading the document</li>
+                        </ol>
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Users will not share documents if they cannot control permissions.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="revisionHistory" class="subGuideline">
+                <h4>
+                    <strong>
+                        Revision History
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-4">4</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Collaborators should be able to view revision history for a document.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        For larger projects, it is important to be able to view the versions of a document.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="spreadSheetEditors" class="subGuideline">
+                <h4>
+                    <strong>
+                        Spreadsheet Editors
+                        <span class="badge badge-2">2</span>
+                        <span class="badge badge-1">1</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        For spreadsheet editors, allow users to lock specific cells from editing even if the document itself is shared.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        It is nice for users to be able to have more granular control over shared spreadsheets.
+                    </p>
+                </div>
+            </div>
+
+            <div id="userLocation" class="subGuideline">
+                <h4>
+                    <strong>
+                        User Location
+                        <span class="badge badge-1">1</span>
+                        <span class="badge badge-1">1</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Each user’s location should be displayed on all user’s views along with the
+                        changes being made as quickly as possible.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Without this guideline, user's will be inclined to work on the same
+                        portions of the document at the same time. This reduces collaborative efficiency.
+                    </p>
+                </div>
+            </div>
+
+            <div id="viewSettings" class="subGuideline">
+                <h4>
+                    <strong>
+                        View Settings
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Allow users to customize view settings, such as zoom level without affecting other users.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Users need to be able to control their view, but not affect others' view.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="https://www.researchgate.net/publication/277503101_Multi-User_Usability_Guidelines_for_Interactive_Wall_Display_Applications">
+                            Multi-User Usability Guidelines for Interactive Wall Display Applications
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="drawingApplications" class="guideline list-group-item">
+        <h4 class="title">Drawing Applications</h4>
+        <div>
+            <div class="titleBar subGuideline">
+                <h4>
+                    <strong>
+                        Guideline
+                        <span class="badge">Strength of Evidence [1-5]</span>
+                        <span class="badge">Relative Importance [1-5]</span>
+                    </strong>
+                </h4>
+            </div>
+
+            <div id="communityPresentation" class="subGuideline">
+                <h4>
+                    <strong>
+                        Community Presentation
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Provide users with a general community where drawing and sketches can be shared,
+                        commented on, and possibly collaborated on as well, if drawing owners allow it.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        A central place to view the artwork the community has created will inspire more
+                        art and allow users to share and comment on their work.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://artprompts.org/the-best-online-art-communities/">
+                            The Best Online Art Communities
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="embeddedMessaging" class="subGuideline">
+                <h4>
+                    <strong>
+                        Embedded Messaging
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Provide users with a chat application within the drawing
+                        application so that they can communicate with one-another easily.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Collaboration is difficult without an ability to communicate. Allowing users
+                        to chat with one-another will facilitate more collaboration. Artists tend view
+                        art itself as a dialogue between the artist and the work. Such an artistic dialogue
+                        must be shared between artists when collaborating on something.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                                    Using Google’s apps for the collaborative construction, refinement and formalization of knowledge
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="http://faso.com/fineartviews/34275/collaboration-in-art-mutual-respect-mutual-work-mutual-exposure">
+                                    Collaboration in Art -- mutual respect, mutual work, mutual exposure
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="formatConversion" class="subGuideline">
+                <h4>
+                    <strong>
+                        Format Conversion
+                        <span class="badge badge-2">2</span>
+                        <span class="badge badge-2">2</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Allow users to download and share drawings in popular picture formats, such as png, jpg, etc.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        The evidence for this guideline should be self-evident. Art is typically created to be shared
+                        and using popular formats facilitates sharing. However, picture formats tend to be easily
+                        interchangeable so at least supporting one popularm such as png or jpg format may be enough.
+                    </p>
+                </div>
+            </div>
+
+            <div id="permissions" class="subGuideline">
+                <h4>
+                    <strong>
+                        Permissions
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Allow drawing owners to grant and deny permissions on their drawings.
+                        Permission examples include:
+                        <ul>
+                            <li>All</li>
+                            <li>Group</li>
+                            <li>Self</li>
+                        </ul>            
+                        All, Group, Self are able to edit a drawing, with Group representing a 
+                        group of friends, a team, or other group of people collaborating on a drawing.          
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Users are unlikely to collaborate unless they can control permissions over their content. 
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                            Using Google’s apps for the collaborative construction, refinement and formalization of knowledge
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="realTimeUpdates" class="subGuideline">
+                <h4>
+                    <strong>
+                        Real Time Updates
+                        <span class="badge badge-5">5</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Allow users to see others' edits in real-time on a shared drawing.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Users will want to see edits in real-time because this
+                        feature is prevalent in most collaborate editing software, such as Google Docs and Spreadsheets. 
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="https://en.wikipedia.org/wiki/Operational_transformation">
+                                    Operational Transformation
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="http://blog.gainlo.co/index.php/2016/03/22/system-design-interview-question-how-to-design-google-docs/">
+                                    How To Design Google Docs
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="socialMediaPlatforms" class="subGuideline">
+                <h4>
+                    <strong>
+                        Social Media Platforms
+                        <span class="badge badge-4">4</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Allow users to share drawings on popular social media platforms, such as Facebook, Twitter, Instagram, etc. 
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Allowing users to post drawings to social media will greatly enhance their experience and inspire more artwork. 
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://www.cnn.com/2009/TECH/08/19/online.collaborative.art/index.html?eref=ig">
+                            Strangers gather on Web to make collective art
+                        </a>
+                    </p>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div id="fileSharingApplications" class="guideline list-group-item">
+        <h4 class="title">File Sharing and Document Library Applications</h4>
+        <div>
+            <div class="titleBar subGuideline">
+                <h4>
+                    <strong>
+                        Guideline
+                        <span class="badge">Strength of Evidence [1-5]</span>
+                        <span class="badge">Relative Importance [1-5]</span>
+                    </strong>
+                </h4>
+            </div>
+
+            <div id="administratorOverrides" class="subGuideline">
+                <h4>
+                    <strong>
+                        Administrator Overrides
+                        <span class="badge badge-4">4</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Site administrators should be able to control check in/out states.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Administrator control should allow the prevention of indefinite check outs, or allow administrators
+                        to control the check out states of all shared objects. This allows the object to be removed from
+                        an inaccessible state through various user interactions.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://www.mssharepointtips.com/tip.asp?id=928">
+                            Taking Control of Checked Out Documents in SharePoint
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="checkOutControl" class="subGuideline">
+                <h4>
+                    <strong>
+                        Check Out Control
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Once an object is checked out, no other user should be able to simultaneously check out or make changes to
+                        the same object.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        If an object requires check out and it is checked out. No other user should be able to work on the same
+                        object at the same time. If multiple checkouts are allowed, merging procedures should be implemented in order to
+                        maintain data integrity across all user interfaces.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://sharepointpromag.com/sharepoint-administration/top-10-best-practices-document-libraries">
+                            Top 10 Best Practices for Document Libraries
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="commenting" class="subGuideline">
+                <h4>
+                    <strong>
+                        Commenting
+                        <span class="badge badge-2">2</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Check in should require a description of the changes made.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        This guideline provides the 'why' to describe the purpose of the associated change.
+                    </p>
+                </div>
+            </div>
+
+            <div id="duration" class="subGuideline">
+                <h4>
+                    <strong>
+                        Duration
+                        <span class="badge badge-4">4</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Check out time duration should be limited.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Duration limits should be implemented to preclude a user from keeping an object checked out
+                        indefinitely without reconfirming the check out after the set duration.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://sharepointpromag.com/sharepoint-administration/top-10-best-practices-document-libraries">
+                            Top 10 Best Practices for Document Libraries
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="metadata" class="subGuideline">
+                <h4>
+                    <strong>
+                        Metadata
+                        <span class="badge badge-2">2</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Check out should be timestamped.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        A checkout should be timestamped so other users know how long the item has been checked out and can ascertain
+                        when the object will be available for edit. This also prevents indefinitely long checkouts by providing a data
+                        field for duration comparison.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <ul style="list-style-type:none">
+                            <li>
+                                <a style="color:blue" href="http://sharepointmaven.com/top-5-best-practices-document-management-sharepoint/">
+                                    Top 5 Best Practices for Document Management in SharePoint
+                                </a>
+                            </li>
+                            <li>
+                                <a style="color:blue" href="http://sharepointpromag.com/sharepoint-administration/top-10-best-practices-document-libraries">
+                                    Top 10 Best Practices for Document Libraries
+                                </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div id="objectUpdateFrequency" class="subGuideline">
+                <h4>
+                    <strong>
+                        Object Update Frequency
+                        <span class="badge badge-1">1</span>
+                        <span class="badge badge-5">5</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Object changes should be updated as quickly as possible and reflected across
+                        all user views.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Users need to work on the most updated version of shared objects so that changes are not
+                        lost amongst users. Without immediate updates, users would be unaware of the concurrent changes
+                        being made. This would significantly degrade the usability of the application as the integrity
+                        of the shared object would be compromised.
+                    </p>
+                </div>
+            </div>
+
+            <div id="objectVersioning" class="subGuideline">
+                <h4>
+                    <strong>
+                        Object Versioning
+                        <span class="badge badge-3">3</span>
+                        <span class="badge badge-4">4</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Checking in objects should be saved as a differential along with who made the change and when the change was made.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        Each shared object should be able to be restored to any of its previous states. To do this, each check in needs
+                        to be associated with a differential between its previous states. Each check in should also store references to
+                        which user made the change and at what time. This gives users the ability to find out who, what, when, and why
+                        a change was made enhancing the usability of the application.
+                    </p>
+                    <p>
+                        <strong>References:  </strong>
+                        <a style="color:blue" href="http://sharepointpromag.com/sharepoint-administration/top-10-best-practices-document-libraries">
+                            Top 10 Best Practices for Document Libraries
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="validation" class="subGuideline">
+                <h4>
+                    <strong>
+                        Validation
+                        <span class="badge badge-1">1</span>
+                        <span class="badge badge-3">3</span>
+                    </strong>
+                </h4>
+                <div>
+                    <p>
+                        Check in procedures should include validation and confirmation before updating the central repository.
+                    </p>
+                    <p>
+                        <strong>Comments: </strong>
+                        User's may accidentally check in an object prior to completion or with incorrectly entered data. This guideline
+                        provides an extra layer of validation so as to not degrade the experience of any other user.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="report">
+    <h4>Reports</h4>
+    <p>
+        Several multiuser applications were evaluated according the guidelines described above.
+        Each application was given a score comparative to the relative importance and strength of evidence
+        associated with pertaining guideline. The applications investigated were:
+        <ul>
+            <li>Microsoft Word Online</li>
+            <li>Microsoft OneNote</li>
+            <li>Google Hangouts</li>
+            <li>Google Documents</li>
+            <li>Google Sheets</li>
+            <li>Skype</li>
+            <li>Spotify's collaborative playlist feature</li>
+            <li>NetStetch</li>
+            <li>FlockDraw</li>
+        </ul>        
+    </p>
+</div>
+
+<script src="~/Scripts/jquery-uiNEW.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".guideline").accordion({
+            collapsible: true,
+            active: false,
+            heightStyle: "content"
+        });
+        $(".subGuideline").accordion({
+            collapsible: true,
+            active: false,
+            heightStyle: "content"
+        });
+        $(".titleBar").accordion({
+            collapsible: false,
+            active: false,
+            icons: "",
+        });
+    })
+</script>
+
+<style>
+    .titleBar .ui-accordion-header {
+        padding-left: 15px;
+        background: none;
+        color: black;
+        border: none;
+    }
+    .subGuideline {
+        margin-bottom: 2px;
+    }
+    h4 .badge {
+        float: right;
+    }
+    .badge-5 {
+        color: #b94a48;
+        background-color: #f2dede;
+        border-color: #eed3d7;
+    }
+    .badge-4 {
+        color: #806000;
+        background-color: #ffecb3;
+        border-color: #cca633;
+    }
+    .badge-3 {
+        color: #208000;
+        background-color: #c6ffb3;
+        border-color: #208000;
+    }
+    .badge-2 {
+        color: #000099;
+        background-color: #b3b3ff;
+        border-color: #000099;
+    }
+    .badge-1 {
+        color: #47476b;
+        background-color: #d1d1e0;
+        border-color: #47476b;
+    }
+</style>
