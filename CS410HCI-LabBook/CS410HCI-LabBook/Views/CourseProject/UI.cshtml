@@ -17,7 +17,9 @@
         each user to complete the command and any comments noticed during each task. The tasks were performed using the touch screen
         of a ten inch tablet. This tablet is a bit larger than the tablets used in the SEPTL library but close enough to where
         accurate touch simulation could be performed. After completing each task, the user was given a questionnaire
-        which gathered preference metrics as well as any opinion based metrics in the form of open-ended questions.
+        which gathered preference metrics as well as any opinion based metrics in the form of open-ended questions. Click on
+        any of the listed items below to see their respective results. The User Interface and other raw data can be viewed
+        by clicking their respective buttons.
     </p>
     <div id="metricsGroups" class="list-group">
         <div class="metricGroup list-group-item">
@@ -395,5 +397,17 @@
         height: auto;
         margin-top: 5px;
         border:none;
+    }
+
+    .metricGroup .ui-accordion-header-active {
+        color: #333333;
+        background-color: lightgrey;
+        border-color: darkgrey;
+        padding: .2em .5em .2em .7em;
+    }
+
+    .metricGroup .ui-accordion-header-collapsed {
+        padding: .2em .5em .2em .7em;
+        border: none;
     }
 </style>
