@@ -310,6 +310,7 @@
         var window = $("#userInterface").data("kendoWindow");
         window.wrapper.css({
             width: "90%",
+            height: "80%",
             maxWidth: "1005px",
             position: "absolute",
             top: "60px"
@@ -346,8 +347,8 @@
         var uiWidth = $("#userInterface").width() - 10;
         uiFrame.width(uiWidth);
 
-        var uiHeight = uiWidth * .75;
-        uiFrame.height(uiWidth);
+        var uiHeight = $("#userInterface").height() - 10;
+        uiFrame.height(uiHeight);
     }
 
     function openQuestionaire() {
