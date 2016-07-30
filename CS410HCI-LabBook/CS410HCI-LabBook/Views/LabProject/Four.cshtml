@@ -6,13 +6,142 @@
     <h3>Lab Project 4b -  Multiuser Application Guidelines</h3>
 </div>
 
-<div id="guidelines" class="list-group">
+<div id="guidelinesGeneralized" class="list-group">
     <h4>Guidelines</h4>
     <p>
-        Several guidelines specific to multiuser applications are outlined below and contained in their
+        Conducting research at a granular level on different types of multiuser applications allowed us
+        to group generalized ideas for all mutliuser applications. They can be viewed by clicking the
+        guideline below.
+    </p>
+
+    <div id="commonArea" class="guideline list-group-item">
+        <h4>1.1 Common Area For Settings</h4>
+        <div>
+            <p>
+                Designate one easily reachable area to all collaboration / sharing configurations.
+            </p>
+            <p><strong>Relative Importance: <span class="badge badge-1">1</span></strong></p>
+            <p><strong>Strength of Evidence: <span class="badge badge-3">3</span></strong><p>
+            <p>
+                <strong>Comments: </strong>
+                It is important for a collaborative software to make it easy to collaborate with others.
+            </p>
+        </div>
+    </div>
+
+    <div id="embeddedMessaging" class="guideline list-group-item">
+        <h4>1.2 Embedded Messaging  </h4>
+        <div>
+            <p>
+                Provide an embedded text messaging feature so that users can quickly communicate.
+            </p>
+            <p><strong>Relative Importance: <span class="badge badge-5">5</span></strong></p>
+            <p><strong>Strength of Evidence: <span class="badge badge-5">5</span></strong><p>
+                <strong>Comments: </strong>
+                Text chat is also a ubiquitous feature in collaborative applications, so most users expect to have it because they are accustomed to having it available. Furthermore, the availability of a quick messaging service drastically improves collaboration effectiveness and efficiency.
+            </p>
+            <p>
+                <strong>References:  </strong>
+                <ul style="list-style-type:none">
+                    <li>
+                        <a style="color:blue" href="https://hbr.org/2014/04/how-a-weekly-meeting-took-up-300000-hours-a-year/">
+                            Harvard Business Review
+                        </a>
+                    </li>
+                    <li>
+                        <a style="color:blue" href="http://www.statista.com/statistics/258749/most-popular-global-mobile-messenger-apps/">
+                            The Statistics Portal
+                        </a>
+                    </li>
+                    <li>
+                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
+                        </a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <div id="helpContent" class="guideline list-group-item">
+        <h4>1.3 Help Content</h4>
+        <div>
+            <p>
+                Ensure help content is easily accessible
+            </p>
+            <p><strong>Relative Importance: <span class="badge badge-3">3</span></strong></p>
+            <p><strong>Strength of Evidence: <span class="badge badge-5">5</span></strong><p>
+            <p>
+                <strong>Comments: </strong>
+                It is important for users to easily and quickly access
+                help content in case they are having trouble navigating your software.
+            </p>
+        </div>
+    </div>
+
+    <div id="keyboardFunctionality" class="guideline list-group-item">
+        <h4>1.4 Keyboard Functionality</h4>
+        <div>
+            <p><strong>Relative Importance: <span class="badge badge-3">3</span></strong></p>
+            <p><strong>Strength of Evidence: <span class="badge badge-5">5</span></strong><p>
+            <p>
+                Options should be reachable by keyboard only. elected options should be
+                indicated with some form of highlighting of sufficient contract to indicate an option is active.
+            </p>
+            <p>
+                <strong>Comments: </strong>
+                For accessibility reasons, all options should be reachable by keyboard as well as mouse.
+            </p>
+            <p>
+                <strong>References:  </strong>
+                <a style="color:blue" href="https://www.w3.org/WAI/intro/wcag">
+                    Web Content Accessibility Guidelines (WCAG) Overview
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div id="permissionLevels" class="guideline list-group-item">
+        <h4>1.5 Permission Levels</h4>
+        <div>
+            <p>
+                An object owner should be able to set and control various permissions on individual collaborators.
+            </p>
+            <p><strong>Relative Importance: <span class="badge badge-5">5</span></strong></p>
+            <p><strong>Strength of Evidence: <span class="badge badge-5">5</span></strong></p>
+            <p>
+                <strong>Comments: </strong>
+                Users will not share collaborative objects if the data integrity of the shared object cannot be guaranteed.
+                For communications applications, this includes screen and microphone control, participant control, and any other setting that effects all participants. Some of the permissions may include:
+                <ol>
+                    <li>Public viewing</li>
+                    <li>Unique view only links</li>
+                    <li>Grant/deny editing</li>
+                    <li>Grant/deny the collaborator from adding other collaborators</li>
+                    <li>Grant/deny the collaborator from printing/downloading the document</li>
+                </ol>
+            </p>
+            <p>
+                <strong>References:  </strong>
+                <ul style="list-style-type:none">
+                    <li>
+                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
+                        </a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="guidelines" class="list-group">
+    <h4>Granular Guidelines</h4>
+    <p>
+        Several guidelines specific to separate multiuser applications types are outlined below and contained in their
         respective categories. Along with the description, each guideline contains a respective
         Relative Importance, Strength of Evidence, comments, and references used to source the Strength of
-        Evidence variable. Not all guidelines apply to all types of applications and so we created a set of 
+        Evidence variable. Not all guidelines apply to all types of applications and so we created a set of
         guidelines unique to the application's use cases. Click on any of the application styles below to
         see their respective guidelines.
     </p>
@@ -22,8 +151,8 @@
         <div>
             <div class="titleBar subGuideline">
                 <h4>
+                    .
                     <strong>
-                        Guideline
                         <span class="badge">Strength of Evidence [1-5]</span>
                         <span class="badge">Relative Importance [1-5]</span>
                     </strong>
@@ -32,11 +161,9 @@
 
             <div id="americanSignLanguage" class="subGuideline">
                 <h4>
-                    <strong>
-                        American Sign Language (ASL) Intelligibility
-                        <span class="badge badge-4">4</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    2.1 American Sign Language (ASL) Intelligibility
+                    <span class="badge badge-4">4</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
@@ -73,11 +200,9 @@
 
             <div id="contactSharing" class="subGuideline">
                 <h4>
-                    <strong>
-                        Contact Sharing
-                        <span class="badge badge-4">4</span>
-                        <span class="badge badge-2">2</span>
-                    </strong>
+                    2.2 Contact Sharing
+                    <span class="badge badge-4">4</span>
+                    <span class="badge badge-2">2</span>
                 </h4>
                 <div>
                     <p>
@@ -101,59 +226,11 @@
                 </div>
             </div>
 
-            <div id="helpContent" class="subGuideline">
+            <div id="largeConference" class="subGuideline">
                 <h4>
-                    <strong>
-                        Help Content
-                        <span class="badge badge-1">1 </span>
-                        <span class="badge badge-5">5 </span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Ensure help content is easily accessible
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        It is important for users to easily and quickly access
-                        help content in case they are having trouble navigating your software.
-                    </p>
-                </div>
-            </div>
-
-            <div id="keyboardFunctionality" class="subGuideline">
-                <h4>
-                    <strong>
-                        Keyboard Functionality
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-4">4</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Options should be reachable by keyboard only. elected options should be
-                        indicated with some form of highlighting of sufficient contract to indicate an option is active.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        For accessibility reasons, all options should be reachable by keyboard as well as mouse.
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <a style="color:blue" href="https://www.w3.org/WAI/intro/wcag">
-                            Web Content Accessibility Guidelines (WCAG) Overview
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-            <div id="mamo" class="subGuideline">
-                <h4>
-                    <strong>
-                        Massive Multi User Conferences
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    2.3 Large Conferences
+                    <span class="badge badge-5">5</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
@@ -183,52 +260,11 @@
                 </div>
             </div>
 
-            <div id="messaging" class="subGuideline">
-                <h4>
-                    <strong>
-                        Messaging
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Provide a text chat application so that users can
-                        communicate via text as well as video to share documents, photos, links, etc.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        A study found that a certain company consumes over 300,000 total employee
-                        hours per year in meetings to prepare for a larger meeting. Using video chats
-                        with text-chat and document sharing support can greatly cut down on long meetings.
-                        Text chat is also a ubiquitous feature in collaborative applications, so most
-                        users expect to have it because they are accustomed to having it available.
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <ul style="list-style-type:none">
-                            <li>
-                                <a style="color:blue" href="https://hbr.org/2014/04/how-a-weekly-meeting-took-up-300000-hours-a-year/">
-                                    Harvard Business Review
-                                </a>
-                            </li>
-                            <li>
-                                <a style="color:blue" href="http://www.statista.com/statistics/258749/most-popular-global-mobile-messenger-apps/">
-                                    The Statistics Portal
-                                </a>
-                            </li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-
             <div id="potsDialIn" class="subGuideline">
                 <h4>
-                    <strong>
-                        Plain Old Telephone (POT)s Dial In
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-1">1</span>
-                    </strong>
+                    2.4 Plain Old Telephone (POT)s Dial In
+                    <span class="badge badge-3">3</span>
+                    <span class="badge badge-1">1</span>
                 </h4>
                 <div>
                     <p>
@@ -245,11 +281,9 @@
 
             <div id="screenSharing" class="subGuideline">
                 <h4>
-                    <strong>
-                        Screen Sharing
-                        <span class="badge badge-4">4</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    2.5 Screen Sharing
+                    <span class="badge badge-4">4</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
@@ -279,11 +313,9 @@
 
             <div id="userBlocking" class="subGuideline">
                 <h4>
-                    <strong>
-                        User Blocking
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    2.6 User Blocking
+                    <span class="badge badge-5">5</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
@@ -317,11 +349,9 @@
 
             <div id="transcripting" class="subGuideline">
                 <h4>
-                    <strong>
-                        Real Time Text Transcripting
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    2.7 Real Time Text Transcripting
+                    <span class="badge badge-3">3</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
@@ -347,11 +377,9 @@
 
             <div id="translation" class="subGuideline">
                 <h4>
-                    <strong>
-                        Translation
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    2.8 Translation
+                    <span class="badge badge-3">3</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
@@ -382,11 +410,9 @@
 
             <div id="viewConferenceAttendees" class="subGuideline">
                 <h4>
-                    <strong>
-                        View Conference Attendees
-                        <span class="badge badge-2">2</span>
-                        <span class="badge badge-1">1</span>
-                    </strong>
+                    2.9 View Conference Attendees
+                    <span class="badge badge-2">2</span>
+                    <span class="badge badge-1">1</span>
                 </h4>
                 <div>
                     <p>
@@ -397,7 +423,7 @@
                         <strong>Comments: </strong>
                         This guideline is intended for corporate level conferences. Managers need to know
                         which organization members are connected to the conference.
-                    </p>                    
+                    </p>
                 </div>
             </div>
         </div>
@@ -408,21 +434,17 @@
         <div>
             <div class="titleBar subGuideline">
                 <h4>
-                    <strong>
-                        Guideline
-                        <span class="badge">Strength of Evidence [1-5]</span>
-                        <span class="badge">Relative Importance [1-5]</span>
-                    </strong>
+                    .
+                    <span class="badge">Strength of Evidence [1-5]</span>
+                    <span class="badge">Relative Importance [1-5]</span>
                 </h4>
             </div>
 
             <div id="alertSpecification" class="subGuideline">
                 <h4>
-                    <strong>
-                        Alert Specification
-                        <span class="badge badge-2">2</span>
-                        <span class="badge badge-1">1</span>
-                    </strong>
+                    3.1 Alert Specification
+                    <span class="badge badge-2">2</span>
+                    <span class="badge badge-1">1</span>
                 </h4>
                 <div>
                     <p>
@@ -442,11 +464,9 @@
 
             <div id="audioAlerting" class="subGuideline">
                 <h4>
-                    <strong>
-                        Audio Alerting
-                        <span class="badge badge-1">1</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
+                    3.2 Audio Alerting
+                    <span class="badge badge-1">1</span>
+                    <span class="badge badge-3">3</span>
                 </h4>
                 <div>
                     <p>
@@ -461,32 +481,11 @@
                 </div>
             </div>
 
-            <div id="commonArea" class="subGuideline">
-                <h4>
-                    <strong>
-                        Common Area
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-1">1</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Designate one easily reachable area to all collaboration / sharing configurations.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        It is important for a collaborative software to make it easy to collaborate with others.
-                    </p>
-                </div>
-            </div>
-
             <div id="communicationLanguages" class="subGuideline">
                 <h4>
-                    <strong>
-                        Communication Language
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-4">4</span>
-                    </strong>
+                    3.3 Communication Language
+                    <span class="badge badge-3">3</span>
+                    <span class="badge badge-4">4</span>
                 </h4>
                 <div>
                     <p>
@@ -508,55 +507,61 @@
 
             <div id="documentVersioning" class="subGuideline">
                 <h4>
-                    <strong>
-                        Document Versioning
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-4">4</span>
-                    </strong>
+                    3.4 Document versioning
+                    <span class="badge badge-3">3</span>
+                    <span class="badge badge-4">4</span>
                 </h4>
                 <div>
                     <p>
-                        Document owners should be able to revert the document to a previous version.
+                        Document versioning, last edit wins, and document history needs to be stable and consistent
+                        for all collaborators. Owners should be able to revert the document to a previous version.
                     </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        For larger projects, it is important to be able to revert to previous versions of a document.
-                    </p>
-                </div>
-            </div>
-
-            <div id="embededCommunication" class="subGuideline">
-                <h4>
-                    <strong>
-                        Embedded Communication
-                        <span class="badge badge-4">4</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Offer chat within the document so that collaborators can discuss edits, etc.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        Users are more productive when they can communicate about their work.
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
-                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
-                        </a>
-                    </p>
+                    <div>
+                        <p>
+                            <strong>Comments: </strong>
+                        </p>
+                        <p>
+                            With simultaneous editing, simply let the last edit win and users can sort out conflicts
+                            themselves by using versioning, chat, and permissions features. Last-edit itself can be
+                            misleading when considering the technical aspects of simultaneous editing. For example, if
+                            user 1 and user 2 are editing document "abc" and user 1 adds "x" to position 0 of "abc" and user
+                            2 deletes the "c" from abc (ie, deletes position 2 in a 0-based position system), then we'd
+                            expect the result to be "xab". But if we simply send edits without transforming them based on
+                            other edits, we'd get the unexpected "xac". Transforming simultaneous edits based on other edits
+                            is called Operational Transformation and is recommended here.
+                        </p>
+                        <p>
+                            For larger projects, it is important to be able to view the versions of a document.
+                        </p>
+                        <p>
+                            <strong>References:  </strong>
+                            <ul style="list-style-type:none">
+                                <li>
+                                    <a style="color:blue" href="http://blog.gainlo.co/index.php/2016/03/22/system-design-interview-question-how-to-design-google-docs/">
+                                        How To Design Google Docs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="color:blue" href="https://en.wikipedia.org/wiki/Operational_transformation">
+                                        Operational Transformation
+                                    </a>
+                                </li>
+                                <li>
+                                    <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
+                                        Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
+                                    </a>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <div id="environmentSeparation" class="subGuideline">
                 <h4>
-                    <strong>
-                        Environment Separation
-                        <span class="badge badge-2">2</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
+                    3.5 Environment Separation
+                    <span class="badge badge-2">2</span>
+                    <span class="badge badge-3">3</span>
                 </h4>
                 <div>
                     <p>
@@ -578,11 +583,9 @@
 
             <div id="fileFormats" class="subGuideline">
                 <h4>
-                    <strong>
-                        File Formats
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    3.6 File Formats
+                    <span class="badge badge-5">5</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
@@ -603,200 +606,11 @@
                 </div>
             </div>
 
-            <div id="individualUserViews" class="subGuideline">
-                <h4>
-                    <strong>
-                        Individual User Views
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Users should be able to control their own view, such that when another user
-                        switches views, it does not affect other users.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        Users will quickly become frustrated with a collaborative environment that
-                        changes drastically without their input.
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <a style="color:blue" href="https://www.researchgate.net/publication/277503101_Multi-User_Usability_Guidelines_for_Interactive_Wall_Display_Applications">
-                            Multi-User Usability Guidelines for Interactive Wall Display Applications
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-            <div id="keyboardFunctionality" class="subGuideline">
-                <h4>
-                    <strong>
-                        Keyboard Functionality
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-4">4</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Options should be reachable by keyboard only. elected options should be
-                        indicated with some form of highlighting of sufficient contract to indicate an option is active.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        For accessibility reasons, all options should be reachable by keyboard as well as mouse.
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <a style="color:blue" href="https://www.w3.org/WAI/intro/wcag">
-                            Web Content Accessibility Guidelines (WCAG) Overview
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-            <div id="lastEditWins" class="subGuideline">
-                <h4>
-                    <strong>
-                        Last Edit Wins
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Use last-edit wins to resolve simultaneous edit conflicts.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        With simultaneous editing, simply let the last edit win and users can sort out conflicts
-                        themselves by using versioning, chat, and permissions features. Last-edit itself can be
-                        misleading when considering the technical aspects of simultaneous editing. For example, if
-                        user 1 and user 2 are editing document "abc" and user 1 adds "x" to position 0 of "abc" and user
-                        2 deletes the "c" from abc (ie, deletes position 2 in a 0-based position system), then we'd
-                        expect the result to be "xab". But if we simply send edits without transforming them based on
-                        other edits, we'd get the unexpected "xac". Transforming simultaneous edits based on other edits
-                        is called Operational Transformation and is recommended here.
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <ul style="list-style-type:none">
-                            <li>
-                                <a style="color:blue" href="http://blog.gainlo.co/index.php/2016/03/22/system-design-interview-question-how-to-design-google-docs/">
-                                    How To Design Google Docs
-                                </a>
-                            </li>
-                            <li>
-                                <a style="color:blue" href="https://en.wikipedia.org/wiki/Operational_transformation">
-                                    Operational Transformation
-                                </a>
-                            </li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-
-            <div id="permissionsMaintenance" class="subGuideline">
-                <h4>
-                    <strong>
-                        Permissions Maintenance
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-1">1</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Navigating to the form to add collaborators should only take one to two clicks.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        It is important for a collaborative software to make it easy to collaborate with others.
-                    </p>
-                </div>
-            </div>
-
-            <div id="permissionLevels" class="subGuideline">
-                <h4>
-                    <strong>
-                        Permission Levels
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        A document owner should be able to set various permissions on individual collaborators. Permissions include:
-                        <ol>
-                            <li>Grant/deny editing</li>
-                            <li>Grant/deny the collaborator from adding other collaborators</li>
-                            <li>Grant/deny the collaborator from printing/downloading the document</li>
-                        </ol>
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        Users will not share documents if they cannot control permissions.
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
-                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-            <div id="revisionHistory" class="subGuideline">
-                <h4>
-                    <strong>
-                        Revision History
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-4">4</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Collaborators should be able to view revision history for a document.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        For larger projects, it is important to be able to view the versions of a document.
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
-                            Using Google’s Apps for the Collaborative Construction, Refinement and Formalization of Knowledge
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-            <div id="spreadSheetEditors" class="subGuideline">
-                <h4>
-                    <strong>
-                        Spreadsheet Editors
-                        <span class="badge badge-2">2</span>
-                        <span class="badge badge-1">1</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        For spreadsheet editors, allow users to lock specific cells from editing even if the document itself is shared.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        It is nice for users to be able to have more granular control over shared spreadsheets.
-                    </p>
-                </div>
-            </div>
-
             <div id="userLocation" class="subGuideline">
                 <h4>
-                    <strong>
-                        User Location
-                        <span class="badge badge-1">1</span>
-                        <span class="badge badge-1">1</span>
-                    </strong>
+                    3.7 User Location
+                    <span class="badge badge-1">1</span>
+                    <span class="badge badge-1">1</span>
                 </h4>
                 <div>
                     <p>
@@ -813,19 +627,20 @@
 
             <div id="viewSettings" class="subGuideline">
                 <h4>
-                    <strong>
-                        View Settings
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    3.8 View Settings
+                    <span class="badge badge-5">5</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
                         Allow users to customize view settings, such as zoom level without affecting other users.
+                        Users should be able to control their own view, such that when another user
+                        switches views, it does not affect other users.
                     </p>
                     <p>
                         <strong>Comments: </strong>
-                        Users need to be able to control their view, but not affect others' view.
+                        Users need to be able to control their view, but not affect others' view.  Users will quickly
+                        become frustrated with a collaborative environment that changes drastically without their input.
                     </p>
                     <p>
                         <strong>References:  </strong>
@@ -853,11 +668,9 @@
 
             <div id="communityPresentation" class="subGuideline">
                 <h4>
-                    <strong>
-                        Community Presentation
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
+                    4.1 Community Presentation
+                    <span class="badge badge-5">5</span>
+                    <span class="badge badge-3">3</span>
                 </h4>
                 <div>
                     <p>
@@ -878,51 +691,11 @@
                 </div>
             </div>
 
-            <div id="embeddedMessaging" class="subGuideline">
-                <h4>
-                    <strong>
-                        Embedded Messaging
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Provide users with a chat application within the drawing
-                        application so that they can communicate with one-another easily.
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        Collaboration is difficult without an ability to communicate. Allowing users
-                        to chat with one-another will facilitate more collaboration. Artists tend view
-                        art itself as a dialogue between the artist and the work. Such an artistic dialogue
-                        must be shared between artists when collaborating on something.
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <ul style="list-style-type:none">
-                            <li>
-                                <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
-                                    Using Google’s apps for the collaborative construction, refinement and formalization of knowledge
-                                </a>
-                            </li>
-                            <li>
-                                <a style="color:blue" href="http://faso.com/fineartviews/34275/collaboration-in-art-mutual-respect-mutual-work-mutual-exposure">
-                                    Collaboration in Art -- mutual respect, mutual work, mutual exposure
-                                </a>
-                            </li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-
             <div id="formatConversion" class="subGuideline">
                 <h4>
-                    <strong>
-                        Format Conversion
-                        <span class="badge badge-2">2</span>
-                        <span class="badge badge-2">2</span>
-                    </strong>
+                    4.2 Format Conversion
+                    <span class="badge badge-2">2</span>
+                    <span class="badge badge-2">2</span>
                 </h4>
                 <div>
                     <p>
@@ -937,46 +710,11 @@
                 </div>
             </div>
 
-            <div id="permissions" class="subGuideline">
-                <h4>
-                    <strong>
-                        Permissions
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
-                </h4>
-                <div>
-                    <p>
-                        Allow drawing owners to grant and deny permissions on their drawings.
-                        Permission examples include:
-                        <ul>
-                            <li>All</li>
-                            <li>Group</li>
-                            <li>Self</li>
-                        </ul>            
-                        All, Group, Self are able to edit a drawing, with Group representing a 
-                        group of friends, a team, or other group of people collaborating on a drawing.          
-                    </p>
-                    <p>
-                        <strong>Comments: </strong>
-                        Users are unlikely to collaborate unless they can control permissions over their content. 
-                    </p>
-                    <p>
-                        <strong>References:  </strong>
-                        <a style="color:blue" href="http://www.academia.edu/266456/Using_Google_s_apps_for_the_collaborative_construction_refinement_and_formalization_of_knowledge">
-                            Using Google’s apps for the collaborative construction, refinement and formalization of knowledge
-                        </a>
-                    </p>
-                </div>
-            </div>
-
             <div id="realTimeUpdates" class="subGuideline">
                 <h4>
-                    <strong>
-                        Real Time Updates
-                        <span class="badge badge-5">5</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
+                    4.3 Real Time Updates
+                    <span class="badge badge-5">5</span>
+                    <span class="badge badge-3">3</span>
                 </h4>
                 <div>
                     <p>
@@ -985,7 +723,7 @@
                     <p>
                         <strong>Comments: </strong>
                         Users will want to see edits in real-time because this
-                        feature is prevalent in most collaborate editing software, such as Google Docs and Spreadsheets. 
+                        feature is prevalent in most collaborate editing software, such as Google Docs and Spreadsheets.
                     </p>
                     <p>
                         <strong>References:  </strong>
@@ -1007,19 +745,17 @@
 
             <div id="socialMediaPlatforms" class="subGuideline">
                 <h4>
-                    <strong>
-                        Social Media Platforms
-                        <span class="badge badge-4">4</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    4.4 Social Media Platforms
+                    <span class="badge badge-4">4</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
-                        Allow users to share drawings on popular social media platforms, such as Facebook, Twitter, Instagram, etc. 
+                        Allow users to share drawings on popular social media platforms, such as Facebook, Twitter, Instagram, etc.
                     </p>
                     <p>
                         <strong>Comments: </strong>
-                        Allowing users to post drawings to social media will greatly enhance their experience and inspire more artwork. 
+                        Allowing users to post drawings to social media will greatly enhance their experience and inspire more artwork.
                     </p>
                     <p>
                         <strong>References:  </strong>
@@ -1028,7 +764,7 @@
                         </a>
                     </p>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 
@@ -1037,21 +773,17 @@
         <div>
             <div class="titleBar subGuideline">
                 <h4>
-                    <strong>
-                        Guideline
-                        <span class="badge">Strength of Evidence [1-5]</span>
-                        <span class="badge">Relative Importance [1-5]</span>
-                    </strong>
+                    .
+                    <span class="badge">Strength of Evidence [1-5]</span>
+                    <span class="badge">Relative Importance [1-5]</span>
                 </h4>
             </div>
 
             <div id="administratorOverrides" class="subGuideline">
                 <h4>
-                    <strong>
-                        Administrator Overrides
-                        <span class="badge badge-4">4</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    5.1 Administrator Overrides
+                    <span class="badge badge-4">4</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
@@ -1074,11 +806,9 @@
 
             <div id="checkOutControl" class="subGuideline">
                 <h4>
-                    <strong>
-                        Check Out Control
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
+                    5.2 Check Out Control
+                    <span class="badge badge-3">3</span>
+                    <span class="badge badge-3">3</span>
                 </h4>
                 <div>
                     <p>
@@ -1102,11 +832,9 @@
 
             <div id="commenting" class="subGuideline">
                 <h4>
-                    <strong>
-                        Commenting
-                        <span class="badge badge-2">2</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
+                    5.3 Commenting
+                    <span class="badge badge-2">2</span>
+                    <span class="badge badge-3">3</span>
                 </h4>
                 <div>
                     <p>
@@ -1121,11 +849,9 @@
 
             <div id="duration" class="subGuideline">
                 <h4>
-                    <strong>
-                        Duration
-                        <span class="badge badge-4">4</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
+                    5.4 Duration
+                    <span class="badge badge-4">4</span>
+                    <span class="badge badge-3">3</span>
                 </h4>
                 <div>
                     <p>
@@ -1147,11 +873,9 @@
 
             <div id="metadata" class="subGuideline">
                 <h4>
-                    <strong>
-                        Metadata
-                        <span class="badge badge-2">2</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
+                    5.5 Metadata
+                    <span class="badge badge-2">2</span>
+                    <span class="badge badge-3">3</span>
                 </h4>
                 <div>
                     <p>
@@ -1183,11 +907,9 @@
 
             <div id="objectUpdateFrequency" class="subGuideline">
                 <h4>
-                    <strong>
-                        Object Update Frequency
-                        <span class="badge badge-1">1</span>
-                        <span class="badge badge-5">5</span>
-                    </strong>
+                    5.6 Object Update Frequency
+                    <span class="badge badge-1">1</span>
+                    <span class="badge badge-5">5</span>
                 </h4>
                 <div>
                     <p>
@@ -1206,11 +928,9 @@
 
             <div id="objectVersioning" class="subGuideline">
                 <h4>
-                    <strong>
-                        Object Versioning
-                        <span class="badge badge-3">3</span>
-                        <span class="badge badge-4">4</span>
-                    </strong>
+                    5.7 Object Versioning
+                    <span class="badge badge-3">3</span>
+                    <span class="badge badge-4">4</span>
                 </h4>
                 <div>
                     <p>
@@ -1234,11 +954,9 @@
 
             <div id="validation" class="subGuideline">
                 <h4>
-                    <strong>
-                        Validation
-                        <span class="badge badge-1">1</span>
-                        <span class="badge badge-3">3</span>
-                    </strong>
+                    5.8 Validation
+                    <span class="badge badge-1">1</span>
+                    <span class="badge badge-3">3</span>
                 </h4>
                 <div>
                     <p>
@@ -1256,17 +974,16 @@
 </div>
 
 <div id="report">
-    <h4>Reports</h4>
+    <h4>Application Reports</h4>
     <div>
         <p>
             Several multiuser applications were evaluated according the guidelines described above.
             Each application was given a score comparative to the relative importance and strength of evidence
             associated with pertaining guideline. Overall scores were calculated using a weighted average between
-            the Relative Importance and value given to that guideline. Any guideline not mentioned in the report 
-            received a maximum value of 5. The highest ranking collaborative document editor went to Google Docs. 
-            Both communications applications received the same score of 4.4. And FlockDraw stole the show receiving 
-            a perfect score for drawing applications. The applications investigated are listed below and can be 
-            clicked on to see their respective results.
+            the Relative Importance and value given to that guideline. The highest ranking collaborative document 
+            editor went to Google Docs. Both communications applications received the same score of 4.4. FlockDraw 
+            stole the show receiving a perfect score for drawing applications. The applications investigated are
+            listed below and can be clicked on to see their respective results.
         </p>
         <div id="reportsContainer" class="list-group">
             <div id="googleDocsReport" class="reportItem list-group-item">
@@ -1756,14 +1473,14 @@
         margin: 0 -4.8%;
     }
 
-    .guideline > .ui-accordion-header-active {
+    .guideline .ui-accordion-header-active {
         color: #333333;
         background-color: lightgrey;
         border-color: darkgrey;
         padding: .2em .5em .2em .7em;
     }
 
-    .guideline > .ui-accordion-header-collapsed {
+    .guideline .ui-accordion-header-collapsed {
         padding: .2em .5em .2em .7em;
         border: none;
     }
@@ -1783,12 +1500,13 @@
     .titleBar .ui-accordion-header {
         padding-left: 15px;
         background: none;
-        color: black;
+        color: white;
         border: none;
     }
     .subGuideline {
         margin-bottom: 2px;
     }
+
     h4 .badge {
         float: right;
     }

@@ -319,6 +319,7 @@
         start = new Date().getTime();
         $(window).scrollTop();
         window.open();
+        window.center();
 
         var uiFrame = $("#uiFrame");
         resizeUiFrame();
@@ -364,10 +365,10 @@
     }
 
     function resizeQuestionnaireFrame() {
-        var docWidth = $("#questionnairesWindow").width() - 15;
+        var docWidth = $("#questionnairesWindow").width() - 10;
         $("#questionnaireFrame").width(docWidth);
 
-        var docHeight = $("#questionnairesWindow").height() - 15;
+        var docHeight = $("#questionnairesWindow").height() - 10;
         $("#questionnaireFrame").height(docHeight);
     }
 
@@ -384,10 +385,10 @@
     }
 
     function resizeTaskSheetFrame() {
-        var docWidth = $("#taskSheetWindow").width() - 15;
+        var docWidth = $("#taskSheetWindow").width() - 10;
         $("#taskSheetFrame").width(docWidth);
 
-        var docHeight = $("#taskSheetWindow").height() - 15;
+        var docHeight = $("#taskSheetWindow").height() - 10;
         $("#taskSheetFrame").height(docHeight);
     }
 </script>
